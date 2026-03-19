@@ -112,6 +112,25 @@
             padding: 24px;
             color: #c62828;
         }
+        .popup-timetable {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+            padding-top: 6px;
+        }
+        .popup-timetable-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #333;
+        }
+        .popup-timetable-times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 10px;
+        }
+        .popup-timetable-times span {
+            font-family: monospace;
+        }
         @media (max-width: 768px) {
             .container { flex-direction: column; height: auto; min-height: 100vh; }
             .sidebar { width: 100%; max-height: 45vh; border-right: none; border-bottom: 1px solid #dee2e6; }
@@ -303,6 +322,88 @@
                 return result;
             }
 
+            var DAY_NAMES = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+            function getTodayYyyymmdd() {
+                var d = new Date();
+                var y = d.getFullYear();
+                var m = (d.getMonth() + 1);
+                var s = d.getDate();
+                return '' + y + (m < 10 ? '0' : '') + m + (s < 10 ? '0' : '') + s;
+            }
+            function getServiceIdsForDate(calendarRaw, calendarDatesRaw, yyyymmdd) {
+                var set = {};
+                var y = parseInt(yyyymmdd.slice(0, 4), 10);
+                var m = parseInt(yyyymmdd.slice(4, 6), 10) - 1;
+                var day = parseInt(yyyymmdd.slice(6, 8), 10);
+                var weekday = new Date(y, m, day).getDay();
+                var dayCol = DAY_NAMES[(weekday + 6) % 7];
+                calendarRaw.forEach(function (r) {
+                    var sid = r.service_id || '';
+                    if (!sid) return;
+                    if (r.start_date && r.end_date && yyyymmdd >= r.start_date && yyyymmdd <= r.end_date && r[dayCol] === '1') {
+                        set[sid] = true;
+                    }
+                });
+                (calendarDatesRaw || []).forEach(function (r) {
+                    if (r.date !== yyyymmdd) return;
+                    var sid = r.service_id || '';
+                    var ex = parseInt(r.exception_type, 10);
+                    if (ex === 1) set[sid] = true;
+                    else if (ex === 2) delete set[sid];
+                });
+                return set;
+            }
+
+            function buildRouteIdToTripIds(tripsRaw) {
+                var out = {};
+                tripsRaw.forEach(function (r) {
+                    var rid = r.route_id || '';
+                    var tid = r.trip_id || '';
+                    if (!rid || !tid) return;
+                    if (!out[rid]) out[rid] = [];
+                    out[rid].push(tid);
+                });
+                return out;
+            }
+
+            function buildDirectionTripIds(tripsRaw) {
+                var out = {};
+                tripsRaw.forEach(function (r) {
+                    var rid = r.route_id || '';
+                    var tid = r.trip_id || '';
+                    var headsign = (r.trip_headsign || '').trim();
+                    if (!rid || !tid || !headsign) return;
+                    var key = rid + '\t' + headsign;
+                    if (!out[key]) out[key] = [];
+                    out[key].push(tid);
+                });
+                return out;
+            }
+
+            function buildTripIdToServiceId(tripsRaw) {
+                var out = {};
+                tripsRaw.forEach(function (r) {
+                    var tid = r.trip_id || '';
+                    var sid = r.service_id || '';
+                    if (!tid) return;
+                    out[tid] = sid;
+                });
+                return out;
+            }
+
+            function buildStopTimesByStopId(stopTimesRaw) {
+                var out = {};
+                stopTimesRaw.forEach(function (r) {
+                    var sid = r.stop_id || '';
+                    var tid = r.trip_id || '';
+                    var dep = r.departure_time || r.arrival_time || '';
+                    if (!sid || !tid || !dep) return;
+                    if (!out[sid]) out[sid] = [];
+                    out[sid].push({ tripId: tid, time: dep });
+                });
+                return out;
+            }
+
             function escapeHtml(s) {
                 const div = document.createElement('div');
                 div.textContent = s;
@@ -315,10 +416,41 @@
             let polylineLayer = L.layerGroup().addTo(map);
             let markersLayer = L.layerGroup().addTo(map);
             let routeIdToStopIds = {};
+            let routeIdToTripIds = {};
             let routeDirections = {};
             let directionStopIds = {};
+            let directionTripIds = {};
             let tripIdToOrderedStopIds = {};
+            let tripIdToServiceId = {};
             let stopIdToCoord = {};
+            let stopTimesByStopId = {};
+            let serviceIdsToday = {};
+
+            function getTimetableForStop(stop, routeId, directionHeadsign) {
+                if (!routeId || !routeIdToTripIds[routeId]) return [];
+                var tripIds = directionHeadsign
+                    ? (directionTripIds[routeId + '\t' + directionHeadsign] || [])
+                    : routeIdToTripIds[routeId];
+                var tripIdsToday = tripIds.filter(function (tid) { return serviceIdsToday[tripIdToServiceId[tid]]; });
+                if (tripIdsToday.length === 0) return [];
+                var tripSet = {};
+                tripIdsToday.forEach(function (tid) { tripSet[tid] = true; });
+                var times = [];
+                stop.ids.forEach(function (sid) {
+                    (stopTimesByStopId[sid] || []).forEach(function (x) {
+                        if (tripSet[x.tripId]) times.push(x.time);
+                    });
+                });
+                times.sort();
+                var seen = {};
+                var out = [];
+                for (var i = 0; i < times.length && out.length < 20; i++) {
+                    var t = times[i];
+                    if (t.length >= 5) t = t.slice(0, 5);
+                    if (!seen[t]) { seen[t] = true; out.push(t); }
+                }
+                return out;
+            }
 
             function getVisibleStops(routeId, directionHeadsign) {
                 if (!routeId || !routeIdToStopIds[routeId]) return allStops;
@@ -365,12 +497,31 @@
                 });
             }
 
+            function buildPopupContent(stop, routeId, directionHeadsign) {
+                var html = '<strong>' + escapeHtml(stop.name) + '</strong>';
+                if (routeId) {
+                    var times = getTimetableForStop(stop, routeId, directionHeadsign);
+                    if (times.length > 0) {
+                        html += '<div class="popup-timetable"><div class="popup-timetable-title">時刻表（今日）</div><div class="popup-timetable-times">';
+                        times.forEach(function (t) {
+                            var disp = t.length >= 8 ? t.slice(0, 5) : t;
+                            html += '<span>' + escapeHtml(disp) + '</span>';
+                        });
+                        html += '</div></div>';
+                    }
+                }
+                return html;
+            }
+
             function updateMarkers() {
+                var routeId = routeSelectEl.value || '';
+                var directionHeadsign = directionSelectEl.value || '';
                 markersLayer.clearLayers();
                 markers = [];
                 visibleStops.forEach(function (stop, i) {
+                    var popupHtml = buildPopupContent(stop, routeId, directionHeadsign);
                     const m = L.marker([stop.lat, stop.lon])
-                        .bindPopup('<strong>' + escapeHtml(stop.name) + '</strong>')
+                        .bindPopup(popupHtml)
                         .on('click', function () {
                             document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
                             const item = stopListEl.querySelector('.stop-item[data-index="' + i + '"]');
@@ -437,18 +588,27 @@
                 fetch('gtfs/routes.txt').then(function (r) { if (!r.ok) throw new Error('routes.txt'); return r.text(); }),
                 fetch('gtfs/trips.txt').then(function (r) { if (!r.ok) throw new Error('trips.txt'); return r.text(); }),
                 fetch('gtfs/stop_times.txt').then(function (r) { if (!r.ok) throw new Error('stop_times.txt'); return r.text(); }),
-                fetch('gtfs/stops.txt').then(function (r) { if (!r.ok) throw new Error('stops.txt'); return r.text(); })
+                fetch('gtfs/stops.txt').then(function (r) { if (!r.ok) throw new Error('stops.txt'); return r.text(); }),
+                fetch('gtfs/calendar.txt').then(function (r) { if (!r.ok) throw new Error('calendar.txt'); return r.text(); }),
+                fetch('gtfs/calendar_dates.txt').then(function (r) { if (!r.ok) throw new Error('calendar_dates.txt'); return r.text(); })
             ]).then(function (texts) {
                 const routesRaw = parseCSV(texts[0]);
                 const tripsRaw = parseCSV(texts[1]);
                 const stopTimesRaw = parseCSV(texts[2]);
                 const stopsRaw = parseCSV(texts[3]);
+                const calendarRaw = parseCSV(texts[4]);
+                const calendarDatesRaw = parseCSV(texts[5]);
 
+                serviceIdsToday = getServiceIdsForDate(calendarRaw, calendarDatesRaw, getTodayYyyymmdd());
                 routeIdToStopIds = buildRouteIdToStopIds(tripsRaw, stopTimesRaw);
+                routeIdToTripIds = buildRouteIdToTripIds(tripsRaw);
                 routeDirections = buildRouteDirections(tripsRaw);
                 directionStopIds = buildDirectionStopIds(tripsRaw, stopTimesRaw);
+                directionTripIds = buildDirectionTripIds(tripsRaw);
                 tripIdToOrderedStopIds = buildTripIdToOrderedStopIds(stopTimesRaw);
+                tripIdToServiceId = buildTripIdToServiceId(tripsRaw);
                 stopIdToCoord = buildStopIdToCoord(stopsRaw);
+                stopTimesByStopId = buildStopTimesByStopId(stopTimesRaw);
 
                 routesRaw.forEach(function (r) {
                     const id = r.route_id || '';
