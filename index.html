@@ -124,12 +124,12 @@
             color: #333;
         }
         .popup-timetable-times {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 10px;
-        }
-        .popup-timetable-times span {
             font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .popup-timetable-row {
+            white-space: nowrap;
         }
         @media (max-width: 768px) {
             .container { flex-direction: column; height: auto; min-height: 100vh; }
@@ -444,12 +444,34 @@
                 times.sort();
                 var seen = {};
                 var out = [];
-                for (var i = 0; i < times.length && out.length < 20; i++) {
+                for (var i = 0; i < times.length; i++) {
                     var t = times[i];
                     if (t.length >= 5) t = t.slice(0, 5);
                     if (!seen[t]) { seen[t] = true; out.push(t); }
                 }
                 return out;
+            }
+
+            function formatTimetableByHour(times) {
+                var byHour = {};
+                times.forEach(function (t) {
+                    var parts = t.split(':');
+                    var h = parts[0] ? parseInt(parts[0], 10) : 0;
+                    var m = parts[1] !== undefined ? parseInt(parts[1], 10) : 0;
+                    if (isNaN(h)) h = 0;
+                    if (isNaN(m)) m = 0;
+                    if (!byHour[h]) byHour[h] = [];
+                    byHour[h].push(m);
+                });
+                var hours = Object.keys(byHour).map(Number).sort(function (a, b) { return a - b; });
+                var lines = [];
+                hours.forEach(function (h) {
+                    var mins = byHour[h].sort(function (a, b) { return a - b; });
+                    var hStr = (h < 10 ? '0' : '') + h;
+                    var mStr = mins.map(function (m) { return (m < 10 ? '0' : '') + m; }).join(' ');
+                    lines.push({ hour: hStr, minutes: mStr });
+                });
+                return lines;
             }
 
             function getVisibleStops(routeId, directionHeadsign) {
@@ -502,10 +524,10 @@
                 if (routeId) {
                     var times = getTimetableForStop(stop, routeId, directionHeadsign);
                     if (times.length > 0) {
+                        var rows = formatTimetableByHour(times);
                         html += '<div class="popup-timetable"><div class="popup-timetable-title">時刻表（今日）</div><div class="popup-timetable-times">';
-                        times.forEach(function (t) {
-                            var disp = t.length >= 8 ? t.slice(0, 5) : t;
-                            html += '<span>' + escapeHtml(disp) + '</span>';
+                        rows.forEach(function (r) {
+                            html += '<div class="popup-timetable-row">' + escapeHtml(r.hour) + ' | ' + escapeHtml(r.minutes) + '</div>';
                         });
                         html += '</div></div>';
                     }
