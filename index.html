@@ -416,8 +416,8 @@
                 if (routeId !== lastRouteId) {
                     lastRouteId = routeId;
                     directionSelectEl.value = '';
+                    updateDirectionDropdown(routeId);
                 }
-                updateDirectionDropdown(routeId);
                 const directionHeadsign = directionSelectEl.value || '';
                 visibleStops = getVisibleStops(routeId, directionHeadsign);
                 updateMarkers();
