@@ -52,6 +52,11 @@
             outline: none;
             border-color: #2c5aa0;
         }
+        .direction-wrap select:disabled {
+            background: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
         .search-wrap {
             padding: 8px;
             border-bottom: 1px solid #dee2e6;
@@ -124,6 +129,12 @@
                     <option value="">全停留所</option>
                 </select>
             </div>
+            <div class="route-wrap direction-wrap">
+                <label for="direction-select">方向</label>
+                <select id="direction-select" aria-label="方向選択" disabled>
+                    <option value="">-- ルートを選択 --</option>
+                </select>
+            </div>
             <div class="search-wrap">
                 <input type="text" id="search" placeholder="停留所名で検索…" aria-label="検索">
             </div>
@@ -148,6 +159,7 @@
             const stopListEl = document.getElementById('stop-list');
             const searchEl = document.getElementById('search');
             const routeSelectEl = document.getElementById('route-select');
+            const directionSelectEl = document.getElementById('direction-select');
 
             function parseCSV(text) {
                 const lines = text.trim().split(/\r?\n/);
@@ -184,6 +196,18 @@
                 }).map(function (k) { return byName[k]; });
             }
 
+            function buildStopIdToCoord(stopsRaw) {
+                const out = {};
+                stopsRaw.forEach(function (r) {
+                    const id = r.stop_id || '';
+                    const lat = parseFloat(r.stop_lat);
+                    const lon = parseFloat(r.stop_lon);
+                    if (!id || isNaN(lat) || isNaN(lon)) return;
+                    out[id] = [lat, lon];
+                });
+                return out;
+            }
+
             function buildRouteIdToStopIds(tripsRaw, stopTimesRaw) {
                 const routeToTrips = {};
                 tripsRaw.forEach(function (r) {
@@ -212,6 +236,73 @@
                 return routeIdToStopIds;
             }
 
+            function buildRouteDirections(tripsRaw) {
+                const byRoute = {};
+                tripsRaw.forEach(function (r) {
+                    const rid = r.route_id || '';
+                    const tid = r.trip_id || '';
+                    const headsign = (r.trip_headsign || '').trim();
+                    if (!rid || !tid) return;
+                    if (!byRoute[rid]) byRoute[rid] = {};
+                    if (!byRoute[rid][headsign]) byRoute[rid][headsign] = tid;
+                });
+                const result = {};
+                Object.keys(byRoute).forEach(function (rid) {
+                    result[rid] = Object.keys(byRoute[rid]).map(function (h) {
+                        return { headsign: h, tripId: byRoute[rid][h] };
+                    }).filter(function (d) { return d.headsign !== ''; });
+                });
+                return result;
+            }
+
+            function buildDirectionStopIds(tripsRaw, stopTimesRaw) {
+                const routeHeadsignToTrips = {};
+                tripsRaw.forEach(function (r) {
+                    const rid = r.route_id || '';
+                    const tid = r.trip_id || '';
+                    const headsign = (r.trip_headsign || '').trim();
+                    if (!rid || !tid || !headsign) return;
+                    const key = rid + '\t' + headsign;
+                    if (!routeHeadsignToTrips[key]) routeHeadsignToTrips[key] = [];
+                    routeHeadsignToTrips[key].push(tid);
+                });
+                const tripToStops = {};
+                stopTimesRaw.forEach(function (r) {
+                    const tid = r.trip_id || '';
+                    const sid = r.stop_id || '';
+                    if (!tid || !sid) return;
+                    if (!tripToStops[tid]) tripToStops[tid] = [];
+                    tripToStops[tid].push(sid);
+                });
+                const directionStopIds = {};
+                Object.keys(routeHeadsignToTrips).forEach(function (key) {
+                    const set = {};
+                    routeHeadsignToTrips[key].forEach(function (tid) {
+                        (tripToStops[tid] || []).forEach(function (sid) { set[sid] = true; });
+                    });
+                    directionStopIds[key] = set;
+                });
+                return directionStopIds;
+            }
+
+            function buildTripIdToOrderedStopIds(stopTimesRaw) {
+                const byTrip = {};
+                stopTimesRaw.forEach(function (r) {
+                    const tid = r.trip_id || '';
+                    const sid = r.stop_id || '';
+                    const seq = parseInt(r.stop_sequence, 10);
+                    if (!tid || !sid || isNaN(seq)) return;
+                    if (!byTrip[tid]) byTrip[tid] = [];
+                    byTrip[tid].push({ seq: seq, stopId: sid });
+                });
+                const result = {};
+                Object.keys(byTrip).forEach(function (tid) {
+                    byTrip[tid].sort(function (a, b) { return a.seq - b.seq; });
+                    result[tid] = byTrip[tid].map(function (x) { return x.stopId; });
+                });
+                return result;
+            }
+
             function escapeHtml(s) {
                 const div = document.createElement('div');
                 div.textContent = s;
@@ -221,14 +312,56 @@
             let allStops = [];
             let visibleStops = [];
             let markers = [];
+            let polylineLayer = L.layerGroup().addTo(map);
             let markersLayer = L.layerGroup().addTo(map);
             let routeIdToStopIds = {};
+            let routeDirections = {};
+            let directionStopIds = {};
+            let tripIdToOrderedStopIds = {};
+            let stopIdToCoord = {};
 
-            function getVisibleStops(routeId) {
+            function getVisibleStops(routeId, directionHeadsign) {
                 if (!routeId || !routeIdToStopIds[routeId]) return allStops;
-                const set = routeIdToStopIds[routeId];
+                var set;
+                if (directionHeadsign) {
+                    set = directionStopIds[routeId + '\t' + directionHeadsign];
+                }
+                if (!set) set = routeIdToStopIds[routeId];
                 return allStops.filter(function (s) {
                     return s.ids.some(function (id) { return set[id]; });
+                });
+            }
+
+            function getPolylineCoords(routeId, directionHeadsign) {
+                if (!routeId || !directionHeadsign || !routeDirections[routeId]) return [];
+                var dir = routeDirections[routeId].filter(function (d) { return d.headsign === directionHeadsign; })[0];
+                if (!dir || !tripIdToOrderedStopIds[dir.tripId]) return [];
+                var stopIds = tripIdToOrderedStopIds[dir.tripId];
+                var coords = [];
+                for (var i = 0; i < stopIds.length; i++) {
+                    var c = stopIdToCoord[stopIds[i]];
+                    if (c) coords.push(c);
+                }
+                return coords;
+            }
+
+            function updateDirectionDropdown(routeId) {
+                directionSelectEl.innerHTML = '';
+                var opt0 = document.createElement('option');
+                opt0.value = '';
+                opt0.textContent = routeId ? '-- 方向を選択 --' : '-- ルートを選択 --';
+                directionSelectEl.appendChild(opt0);
+                if (!routeId) {
+                    directionSelectEl.disabled = true;
+                    return;
+                }
+                directionSelectEl.disabled = false;
+                var dirs = routeDirections[routeId] || [];
+                dirs.forEach(function (d) {
+                    var opt = document.createElement('option');
+                    opt.value = d.headsign;
+                    opt.textContent = d.headsign;
+                    directionSelectEl.appendChild(opt);
                 });
             }
 
@@ -277,10 +410,26 @@
                 });
             }
 
+            var lastRouteId = '';
             function applyRouteFilter() {
                 const routeId = routeSelectEl.value || '';
-                visibleStops = getVisibleStops(routeId);
+                if (routeId !== lastRouteId) {
+                    lastRouteId = routeId;
+                    directionSelectEl.value = '';
+                }
+                updateDirectionDropdown(routeId);
+                const directionHeadsign = directionSelectEl.value || '';
+                visibleStops = getVisibleStops(routeId, directionHeadsign);
                 updateMarkers();
+
+                polylineLayer.clearLayers();
+                if (routeId && directionHeadsign) {
+                    const coords = getPolylineCoords(routeId, directionHeadsign);
+                    if (coords.length > 1) {
+                        L.polyline(coords, { color: '#2c5aa0', weight: 4, opacity: 0.8 }).addTo(polylineLayer);
+                    }
+                }
+
                 renderList(visibleStops, searchEl.value);
             }
 
@@ -296,6 +445,10 @@
                 const stopsRaw = parseCSV(texts[3]);
 
                 routeIdToStopIds = buildRouteIdToStopIds(tripsRaw, stopTimesRaw);
+                routeDirections = buildRouteDirections(tripsRaw);
+                directionStopIds = buildDirectionStopIds(tripsRaw, stopTimesRaw);
+                tripIdToOrderedStopIds = buildTripIdToOrderedStopIds(stopTimesRaw);
+                stopIdToCoord = buildStopIdToCoord(stopsRaw);
 
                 routesRaw.forEach(function (r) {
                     const id = r.route_id || '';
@@ -310,6 +463,7 @@
 
                 allStops = buildStops(stopsRaw);
                 visibleStops = allStops;
+                updateDirectionDropdown('');
                 updateMarkers();
                 renderList(visibleStops, searchEl.value);
             }).catch(function (err) {
@@ -317,6 +471,7 @@
             });
 
             routeSelectEl.addEventListener('change', applyRouteFilter);
+            directionSelectEl.addEventListener('change', applyRouteFilter);
             searchEl.addEventListener('input', function () {
                 renderList(visibleStops, searchEl.value);
             });
