@@ -1,0 +1,972 @@
+table_name,field_name,language,translation,record_id,record_sub_id,field_value
+stops,stop_name,ja,田町駅東口,,,田町駅東口
+stops,stop_name,ja,藻塩橋,,,藻塩橋
+stops,stop_name,ja,田町駅前,,,田町駅前
+stops,stop_name,ja,浅草線三田駅前,,,浅草線三田駅前
+stops,stop_name,ja,芝五丁目,,,芝五丁目
+stops,stop_name,ja,芝三丁目,,,芝三丁目
+stops,stop_name,ja,芝三丁目北,,,芝三丁目北
+stops,stop_name,ja,赤羽橋南,,,赤羽橋南
+stops,stop_name,ja,赤羽橋駅前,,,赤羽橋駅前
+stops,stop_name,ja,中ノ橋,,,中ノ橋
+stops,stop_name,ja,三田一丁目,,,三田一丁目
+stops,stop_name,ja,麻布十番駅前（一の橋）,,,麻布十番駅前（一の橋）
+stops,stop_name,ja,麻布十番,,,麻布十番
+stops,stop_name,ja,鳥居坂下,,,鳥居坂下
+stops,stop_name,ja,六本木けやき坂,,,六本木けやき坂
+stops,stop_name,ja,六本木ヒルズ,,,六本木ヒルズ
+stops,stop_name,ja,六本木駅前,,,六本木駅前
+stops,stop_name,ja,麻布地区総合支所前,,,麻布地区総合支所前
+stops,stop_name,ja,東洋英和女学院前,,,東洋英和女学院前
+stops,stop_name,ja,麻布十番公共駐車場前,,,麻布十番公共駐車場前
+stops,stop_name,ja,法務局入口,,,法務局入口
+stops,stop_name,ja,東麻布二丁目（田町ルート）,,,東麻布二丁目（田町ルート）
+stops,stop_name,ja,赤羽橋,,,赤羽橋
+stops,stop_name,ja,芝三丁目西,,,芝三丁目西
+stops,stop_name,ja,芝三丁目南,,,芝三丁目南
+stops,stop_name,ja,三田線三田駅前,,,三田線三田駅前
+stops,stop_name,ja,田町駅西口,,,田町駅西口
+stops,stop_name,ja,六本木七丁目南,,,六本木七丁目南
+stops,stop_name,ja,六本木交差点北,,,六本木交差点北
+stops,stop_name,ja,六本木七丁目,,,六本木七丁目
+stops,stop_name,ja,乃木坂駅入口,,,乃木坂駅入口
+stops,stop_name,ja,赤坂小前,,,赤坂小前
+stops,stop_name,ja,赤坂五丁目交番前,,,赤坂五丁目交番前
+stops,stop_name,ja,赤坂駅前,,,赤坂駅前
+stops,stop_name,ja,山王下,,,山王下
+stops,stop_name,ja,赤坂見附駅,,,赤坂見附駅
+stops,stop_name,ja,豊川稲荷前,,,豊川稲荷前
+stops,stop_name,ja,赤坂地区総合支所前,,,赤坂地区総合支所前
+stops,stop_name,ja,高橋是清翁記念公園前,,,高橋是清翁記念公園前
+stops,stop_name,ja,赤坂郵便局前,,,赤坂郵便局前
+stops,stop_name,ja,青山一丁目駅前,,,青山一丁目駅前
+stops,stop_name,ja,南青山一丁目,,,南青山一丁目
+stops,stop_name,ja,赤坂八丁目,,,赤坂八丁目
+stops,stop_name,ja,山王病院前,,,山王病院前
+stops,stop_name,ja,乃木公園,,,乃木公園
+stops,stop_name,ja,檜町公園,,,檜町公園
+stops,stop_name,ja,芝浦車庫,,,芝浦車庫
+stops,stop_name,ja,芝浦四丁目,,,芝浦四丁目
+stops,stop_name,ja,八千代橋,,,八千代橋
+stops,stop_name,ja,赤坂六丁目,,,赤坂六丁目
+stops,stop_name,ja,表参道駅,,,表参道駅
+stops,stop_name,ja,南青山三丁目交差点,,,南青山三丁目交差点
+stops,stop_name,ja,新橋駅,,,新橋駅
+stops,stop_name,ja,新橋駅北口,,,新橋駅北口
+stops,stop_name,ja,西新橋二丁目,,,西新橋二丁目
+stops,stop_name,ja,虎ノ門一丁目,,,虎ノ門一丁目
+stops,stop_name,ja,虎ノ門二丁目,,,虎ノ門二丁目
+stops,stop_name,ja,愛宕一丁目,,,愛宕一丁目
+stops,stop_name,ja,慈恵医大病院入口,,,慈恵医大病院入口
+stops,stop_name,ja,愛宕警察署,,,愛宕警察署
+stops,stop_name,ja,御成門駅,,,御成門駅
+stops,stop_name,ja,港区役所,,,港区役所
+stops,stop_name,ja,芝公園駅,,,芝公園駅
+stops,stop_name,ja,芝園橋,,,芝園橋
+stops,stop_name,ja,金杉橋,,,金杉橋
+stops,stop_name,ja,芝一丁目,,,芝一丁目
+stops,stop_name,ja,芝四丁目,,,芝四丁目
+stops,stop_name,ja,烏森神社,,,烏森神社
+stops,stop_name,ja,東麻布二丁目（ 麻布東ルート）,,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,ja,法務局前,,,法務局前
+stops,stop_name,ja,飯倉片町,,,飯倉片町
+stops,stop_name,ja,東麻布三丁目,,,東麻布三丁目
+stops,stop_name,ja,六本木五丁目,,,六本木五丁目
+stops,stop_name,ja,仙台坂下,,,仙台坂下
+stops,stop_name,ja,仙台坂上,,,仙台坂上
+stops,stop_name,ja,元麻布二丁目,,,元麻布二丁目
+stops,stop_name,ja,愛育クリニック,,,愛育クリニック
+stops,stop_name,ja,有栖川宮記念公園,,,有栖川宮記念公園
+stops,stop_name,ja,広尾駅,,,広尾駅
+stops,stop_name,ja,天現寺橋,,,天現寺橋
+stops,stop_name,ja,光林寺,,,光林寺
+stops,stop_name,ja,本村小学校入口,,,本村小学校入口
+stops,stop_name,ja,二ノ橋,,,二ノ橋
+stops,stop_name,ja,麻布十番二丁目,,,麻布十番二丁目
+stops,stop_name,ja,麻布いーすと通り,,,麻布いーすと通り
+stops,stop_name,ja,東麻布一丁目（東京タワー下）,,,東麻布一丁目（東京タワー下）
+stops,stop_name,ja,虎ノ門五丁目,,,虎ノ門五丁目
+stops,stop_name,ja,神谷町駅前,,,神谷町駅前
+stops,stop_name,ja,御成門北,,,御成門北
+stops,stop_name,ja,御成門中学校,,,御成門中学校
+stops,stop_name,ja,六本木六丁目,,,六本木六丁目
+stops,stop_name,ja,西麻布,,,西麻布
+stops,stop_name,ja,西麻布二丁目,,,西麻布二丁目
+stops,stop_name,ja,西麻布一丁目,,,西麻布一丁目
+stops,stop_name,ja,西麻布四丁目,,,西麻布四丁目
+stops,stop_name,ja,日赤医療センター,,,日赤医療センター
+stops,stop_name,ja,南青山六丁目,,,南青山六丁目
+stops,stop_name,ja,青南小学校,,,青南小学校
+stops,stop_name,ja,外苑前駅,,,外苑前駅
+stops,stop_name,ja,青山二丁目交差点,,,青山二丁目交差点
+stops,stop_name,ja,元赤坂一丁目,,,元赤坂一丁目
+stops,stop_name,ja,南青山七丁目,,,南青山七丁目
+stops,stop_name,ja,品川駅港南口,,,品川駅港南口
+stops,stop_name,ja,芝浦中央公園入口,,,芝浦中央公園入口
+stops,stop_name,ja,港南二丁目,,,港南二丁目
+stops,stop_name,ja,高輪四丁目,,,高輪四丁目
+stops,stop_name,ja,品川駅高輪口,,,品川駅高輪口
+stops,stop_name,ja,東京高輪病院,,,東京高輪病院
+stops,stop_name,ja,高輪三丁目,,,高輪三丁目
+stops,stop_name,ja,高輪警察署前,,,高輪警察署前
+stops,stop_name,ja,高輪台小学校,,,高輪台小学校
+stops,stop_name,ja,高輪二丁目,,,高輪二丁目
+stops,stop_name,ja,高輪一丁目,,,高輪一丁目
+stops,stop_name,ja,魚籃坂下,,,魚籃坂下
+stops,stop_name,ja,高輪地区総合支所前,,,高輪地区総合支所前
+stops,stop_name,ja,三田四丁目,,,三田四丁目
+stops,stop_name,ja,三田三丁目,,,三田三丁目
+stops,stop_name,ja,慶應義塾東門,,,慶應義塾東門
+stops,stop_name,ja,芝浦一丁目,,,芝浦一丁目
+stops,stop_name,ja,竹芝橋,,,竹芝橋
+stops,stop_name,ja,芝浦二丁目,,,芝浦二丁目
+stops,stop_name,ja,芝浦三丁目,,,芝浦三丁目
+stops,stop_name,ja,芝浦アイランド,,,芝浦アイランド
+stops,stop_name,ja,海岸三丁目,,,海岸三丁目
+stops,stop_name,ja,埠頭公園入口,,,埠頭公園入口
+stops,stop_name,ja,高浜橋,,,高浜橋
+stops,stop_name,ja,芝浦中央公園運動場,,,芝浦中央公園運動場
+stops,stop_name,ja,浜路橋,,,浜路橋
+stops,stop_name,ja,港南の郷,,,港南の郷
+stops,stop_name,ja,港南三丁目,,,港南三丁目
+stops,stop_name,ja,港南四丁目,,,港南四丁目
+stops,stop_name,ja,港南いきいきプラザ,,,港南いきいきプラザ
+stops,stop_name,ja,新港南橋,,,新港南橋
+stops,stop_name,ja,港南一丁目,,,港南一丁目
+stops,stop_name,ja,港南小学校前,,,港南小学校前
+stops,stop_name,ja,プラザ神明,,,プラザ神明
+stops,stop_name,ja,溜池山王駅,,,溜池山王駅
+stops,stop_name,ja,青山高樹町,,,青山高樹町
+stops,stop_name,ja,みなとパーク芝浦,,,みなとパーク芝浦
+stops,stop_name,ja,港区役所北,,,港区役所北
+stops,stop_name,ja,汐彩橋北,,,汐彩橋北
+stops,stop_name,ja,芝浦ふ頭南,,,芝浦ふ頭南
+stops,stop_name,ja,潮路橋,,,潮路橋
+stops,stop_name,ja,海岸二丁目,,,海岸二丁目
+stops,stop_name,ja,日の出桟橋入口,,,日の出桟橋入口
+stops,stop_name,ja,竹芝桟橋入口,,,竹芝桟橋入口
+stops,stop_name,ja-Hrkt,たまちえきひがしぐち,,,田町駅東口
+stops,stop_name,ja-Hrkt,もしおばし,,,藻塩橋
+stops,stop_name,ja-Hrkt,たまちえきまえ,,,田町駅前
+stops,stop_name,ja-Hrkt,あさくさせんみたえきまえ,,,浅草線三田駅前
+stops,stop_name,ja-Hrkt,しばごちょうめ,,,芝五丁目
+stops,stop_name,ja-Hrkt,しばさんちょうめ,,,芝三丁目
+stops,stop_name,ja-Hrkt,しばさんちょうめきた,,,芝三丁目北
+stops,stop_name,ja-Hrkt,あかばねばしみなみ,,,赤羽橋南
+stops,stop_name,ja-Hrkt,あかばねばしえきまえ,,,赤羽橋駅前
+stops,stop_name,ja-Hrkt,なかのはし,,,中ノ橋
+stops,stop_name,ja-Hrkt,みたいっちょうめ,,,三田一丁目
+stops,stop_name,ja-Hrkt,あざぶじゅうばんえきまえ（いちのはし）,,,麻布十番駅前（一の橋）
+stops,stop_name,ja-Hrkt,あざぶじゅうばん,,,麻布十番
+stops,stop_name,ja-Hrkt,とりいざかした,,,鳥居坂下
+stops,stop_name,ja-Hrkt,ろっぽんぎけやきざか,,,六本木けやき坂
+stops,stop_name,ja-Hrkt,ろっぽんぎひるず,,,六本木ヒルズ
+stops,stop_name,ja-Hrkt,ろっぽんぎえきまえ,,,六本木駅前
+stops,stop_name,ja-Hrkt,あざぶちくそうごうししょまえ,,,麻布地区総合支所前
+stops,stop_name,ja-Hrkt,とうようえいわじょがくいんまえ,,,東洋英和女学院前
+stops,stop_name,ja-Hrkt,あざぶじゅうばんこうきょうちゅうしゃじょうまえ,,,麻布十番公共駐車場前
+stops,stop_name,ja-Hrkt,ほうむきょくいりぐち,,,法務局入口
+stops,stop_name,ja-Hrkt,ひがしあざぶにちょうめ,,,東麻布二丁目（田町ルート）
+stops,stop_name,ja-Hrkt,あかばねばし,,,赤羽橋
+stops,stop_name,ja-Hrkt,しばさんちょうめにし,,,芝三丁目西
+stops,stop_name,ja-Hrkt,しばさんちょうめみなみ,,,芝三丁目南
+stops,stop_name,ja-Hrkt,みたせんみたえきまえ,,,三田線三田駅前
+stops,stop_name,ja-Hrkt,たまちえきにしぐち,,,田町駅西口
+stops,stop_name,ja-Hrkt,ろっぽんぎななちょうめみなみ,,,六本木七丁目南
+stops,stop_name,ja-Hrkt,ろっぽんぎこうさてんきた,,,六本木交差点北
+stops,stop_name,ja-Hrkt,ろっぽんぎななちょうめ,,,六本木七丁目
+stops,stop_name,ja-Hrkt,のぎざかえきいりぐち,,,乃木坂駅入口
+stops,stop_name,ja-Hrkt,あかさかしょうまえ,,,赤坂小前
+stops,stop_name,ja-Hrkt,あかさかごちょうめこうばんまえ,,,赤坂五丁目交番前
+stops,stop_name,ja-Hrkt,あかさかえきまえ,,,赤坂駅前
+stops,stop_name,ja-Hrkt,さんのうした,,,山王下
+stops,stop_name,ja-Hrkt,あかさかみつけえき,,,赤坂見附駅
+stops,stop_name,ja-Hrkt,とよかわいなりまえ,,,豊川稲荷前
+stops,stop_name,ja-Hrkt,あかさかちくそうごうししょまえ,,,赤坂地区総合支所前
+stops,stop_name,ja-Hrkt,たかはしこれきよおうきねんこうえんまえ,,,高橋是清翁記念公園前
+stops,stop_name,ja-Hrkt,あかさかゆうびんきょくまえ,,,赤坂郵便局前
+stops,stop_name,ja-Hrkt,あおやまいっちょうめえきまえ,,,青山一丁目駅前
+stops,stop_name,ja-Hrkt,みなみあおやまいっちょうめ,,,南青山一丁目
+stops,stop_name,ja-Hrkt,あかさかはっちょうめ,,,赤坂八丁目
+stops,stop_name,ja-Hrkt,さんのうびょういんまえ,,,山王病院前
+stops,stop_name,ja-Hrkt,のぎこうえん,,,乃木公園
+stops,stop_name,ja-Hrkt,ひのきちょうこうえん,,,檜町公園
+stops,stop_name,ja-Hrkt,しばうらしゃこ,,,芝浦車庫
+stops,stop_name,ja-Hrkt,しばうらよんちょうめ,,,芝浦四丁目
+stops,stop_name,ja-Hrkt,やちよばし,,,八千代橋
+stops,stop_name,ja-Hrkt,あかさかろくちょうめ,,,赤坂六丁目
+stops,stop_name,ja-Hrkt,おもてさんどうえき,,,表参道駅
+stops,stop_name,ja-Hrkt,みなみあおやまさんちょうめこうさてん,,,南青山三丁目交差点
+stops,stop_name,ja-Hrkt,しんばしえき,,,新橋駅
+stops,stop_name,ja-Hrkt,しんばしえききたぐち,,,新橋駅北口
+stops,stop_name,ja-Hrkt,にししんばしにちょうめ,,,西新橋二丁目
+stops,stop_name,ja-Hrkt,とらのもんいっちょうめ,,,虎ノ門一丁目
+stops,stop_name,ja-Hrkt,とらのもんにちょうめ,,,虎ノ門二丁目
+stops,stop_name,ja-Hrkt,あたごいっちょうめ,,,愛宕一丁目
+stops,stop_name,ja-Hrkt,じけいいだいびょういんいりぐち,,,慈恵医大病院入口
+stops,stop_name,ja-Hrkt,あたごけいさつしょ,,,愛宕警察署
+stops,stop_name,ja-Hrkt,おなりもんえき,,,御成門駅
+stops,stop_name,ja-Hrkt,みなとくやくしょ,,,港区役所
+stops,stop_name,ja-Hrkt,しばこうえんえき,,,芝公園駅
+stops,stop_name,ja-Hrkt,しばぞのばし,,,芝園橋
+stops,stop_name,ja-Hrkt,かなすぎばし,,,金杉橋
+stops,stop_name,ja-Hrkt,しばいっちょうめ,,,芝一丁目
+stops,stop_name,ja-Hrkt,しばよんちょうめ,,,芝四丁目
+stops,stop_name,ja-Hrkt,からすもりじんじゃ,,,烏森神社
+stops,stop_name,ja-Hrkt,ひがしあざぶにちょうめ,,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,ja-Hrkt,ほうむきょくまえ,,,法務局前
+stops,stop_name,ja-Hrkt,いいぐらかたまち,,,飯倉片町
+stops,stop_name,ja-Hrkt,ひがしあざぶさんちょうめ,,,東麻布三丁目
+stops,stop_name,ja-Hrkt,ろっぽんぎごちょうめ,,,六本木五丁目
+stops,stop_name,ja-Hrkt,せんだいざかした,,,仙台坂下
+stops,stop_name,ja-Hrkt,せんだいざかうえ,,,仙台坂上
+stops,stop_name,ja-Hrkt,もとあざぶにちょうめ,,,元麻布二丁目
+stops,stop_name,ja-Hrkt,あいいくくりにっく,,,愛育クリニック
+stops,stop_name,ja-Hrkt,ありすがわのみやきねんこうえん,,,有栖川宮記念公園
+stops,stop_name,ja-Hrkt,ひろおえき,,,広尾駅
+stops,stop_name,ja-Hrkt,てんげんじばし,,,天現寺橋
+stops,stop_name,ja-Hrkt,こうりんじ,,,光林寺
+stops,stop_name,ja-Hrkt,ほんむらしょうがっこういりぐち,,,本村小学校入口
+stops,stop_name,ja-Hrkt,にのはし,,,二ノ橋
+stops,stop_name,ja-Hrkt,あざぶじゅうばんにちょうめ,,,麻布十番二丁目
+stops,stop_name,ja-Hrkt,あざぶいーすとどおり,,,麻布いーすと通り
+stops,stop_name,ja-Hrkt,ひがしあざぶいっちょうめ（とうきょうたわーした）,,,東麻布一丁目（東京タワー下）
+stops,stop_name,ja-Hrkt,とらのもんごちょうめ,,,虎ノ門五丁目
+stops,stop_name,ja-Hrkt,かみやちょうえきまえ,,,神谷町駅前
+stops,stop_name,ja-Hrkt,おなりもんきた,,,御成門北
+stops,stop_name,ja-Hrkt,おなりもんちゅうがっこう,,,御成門中学校
+stops,stop_name,ja-Hrkt,ろっぽんぎろくちょうめ,,,六本木六丁目
+stops,stop_name,ja-Hrkt,にしあざぶ,,,西麻布
+stops,stop_name,ja-Hrkt,にしあざぶにちょうめ,,,西麻布二丁目
+stops,stop_name,ja-Hrkt,にしあざぶいっちょうめ,,,西麻布一丁目
+stops,stop_name,ja-Hrkt,にしあざぶよんちょうめ,,,西麻布四丁目
+stops,stop_name,ja-Hrkt,にっせきいりょうせんたー,,,日赤医療センター
+stops,stop_name,ja-Hrkt,みなみあおやまろくちょうめ,,,南青山六丁目
+stops,stop_name,ja-Hrkt,せいなんしょうがっこう,,,青南小学校
+stops,stop_name,ja-Hrkt,がいえんまええき,,,外苑前駅
+stops,stop_name,ja-Hrkt,あおやまにちょうめこうさてん,,,青山二丁目交差点
+stops,stop_name,ja-Hrkt,もとあかさかいっちょうめ,,,元赤坂一丁目
+stops,stop_name,ja-Hrkt,みなみあおやまななちょうめ,,,南青山七丁目
+stops,stop_name,ja-Hrkt,しながわえきこうなんぐち,,,品川駅港南口
+stops,stop_name,ja-Hrkt,しばうらちゅうおうこうえんいりぐち,,,芝浦中央公園入口
+stops,stop_name,ja-Hrkt,こうなんにちょうめ,,,港南二丁目
+stops,stop_name,ja-Hrkt,たかなわよんちょうめ,,,高輪四丁目
+stops,stop_name,ja-Hrkt,しながわえきたかなわぐち,,,品川駅高輪口
+stops,stop_name,ja-Hrkt,とうきょうたかなわびょういん,,,東京高輪病院
+stops,stop_name,ja-Hrkt,たかなわさんちょうめ,,,高輪三丁目
+stops,stop_name,ja-Hrkt,たかなわけいさつしょまえ,,,高輪警察署前
+stops,stop_name,ja-Hrkt,たかなわだいしょうがっこう,,,高輪台小学校
+stops,stop_name,ja-Hrkt,たかなわにちょうめ,,,高輪二丁目
+stops,stop_name,ja-Hrkt,たかなわいっちょうめ,,,高輪一丁目
+stops,stop_name,ja-Hrkt,ぎょらんざかした,,,魚籃坂下
+stops,stop_name,ja-Hrkt,たかなわちくそうごうししょまえ,,,高輪地区総合支所前
+stops,stop_name,ja-Hrkt,みたよんちょうめ,,,三田四丁目
+stops,stop_name,ja-Hrkt,みたさんちょうめ,,,三田三丁目
+stops,stop_name,ja-Hrkt,けいおうぎじゅくひがしもん,,,慶應義塾東門
+stops,stop_name,ja-Hrkt,しばうらいっちょうめ,,,芝浦一丁目
+stops,stop_name,ja-Hrkt,たけしばばし,,,竹芝橋
+stops,stop_name,ja-Hrkt,しばうらにちょうめ,,,芝浦二丁目
+stops,stop_name,ja-Hrkt,しばうらさんちょうめ,,,芝浦三丁目
+stops,stop_name,ja-Hrkt,しばうらあいらんど,,,芝浦アイランド
+stops,stop_name,ja-Hrkt,かいがんさんちょうめ,,,海岸三丁目
+stops,stop_name,ja-Hrkt,ふとうこうえんいりぐち,,,埠頭公園入口
+stops,stop_name,ja-Hrkt,たかはまばし,,,高浜橋
+stops,stop_name,ja-Hrkt,しばうらちゅうおうこうえんうんどうじょう,,,芝浦中央公園運動場
+stops,stop_name,ja-Hrkt,はまじばし,,,浜路橋
+stops,stop_name,ja-Hrkt,こうなんのさと,,,港南の郷
+stops,stop_name,ja-Hrkt,こうなんさんちょうめ,,,港南三丁目
+stops,stop_name,ja-Hrkt,こうなんよんちょうめ,,,港南四丁目
+stops,stop_name,ja-Hrkt,こうなんいきいきぷらざ,,,港南いきいきプラザ
+stops,stop_name,ja-Hrkt,しんこうなんばし,,,新港南橋
+stops,stop_name,ja-Hrkt,こうなんいっちょうめ,,,港南一丁目
+stops,stop_name,ja-Hrkt,こうなんしょうがっこうまえ,,,港南小学校前
+stops,stop_name,ja-Hrkt,ぷらざしんめい,,,プラザ神明
+stops,stop_name,ja-Hrkt,ためいけさんのうえき,,,溜池山王駅
+stops,stop_name,ja-Hrkt,あおやまたかぎちょう,,,青山高樹町
+stops,stop_name,ja-Hrkt,みなとぱーくしばうら,,,みなとパーク芝浦
+stops,stop_name,ja-Hrkt,みなとくやくしょきた,,,港区役所北
+stops,stop_name,ja-Hrkt,しおさいばしきた,,,汐彩橋北
+stops,stop_name,ja-Hrkt,しばうらふとうみなみ,,,芝浦ふ頭南
+stops,stop_name,ja-Hrkt,しおじばし,,,潮路橋
+stops,stop_name,ja-Hrkt,かいがんにちょうめ,,,海岸二丁目
+stops,stop_name,ja-Hrkt,ひのでさんばしいりぐち,,,日の出桟橋入口
+stops,stop_name,ja-Hrkt,たけしばさんばしいりぐち,,,竹芝桟橋入口
+stops,stop_name,en,Tamachi Sta. East Gate,,,田町駅東口
+stops,stop_name,en,Moshiobashi,,,藻塩橋
+stops,stop_name,en,Tamachi Sta.,,,田町駅前
+stops,stop_name,en,Mita Station on the Asakusa Line,,,浅草線三田駅前
+stops,stop_name,en,Kinrofukushi Kaikan,,,S_2629
+stops,stop_name,en,Shiba 5-chome,,,芝五丁目
+stops,stop_name,en,Shiba 3-chome,,,芝三丁目
+stops,stop_name,en,Shiba 3-chome Kita,,,芝三丁目北
+stops,stop_name,en,Akabanebashi Minami,,,赤羽橋南
+stops,stop_name,en,Akabanebashi Sta.,,,赤羽橋駅前
+stops,stop_name,en,Nakanohashi,,,中ノ橋
+stops,stop_name,en,Mita 1-chome,,,三田一丁目
+stops,stop_name,en,Azabu Jyuban Sta.（Ichinohashi）,,,麻布十番駅前（一の橋）
+stops,stop_name,en,Azabu Jyuban,,,麻布十番
+stops,stop_name,en,Toriizaka-shita,,,鳥居坂下
+stops,stop_name,en,Roppongi Keyakizaka,,,六本木けやき坂
+stops,stop_name,en,Roppongi Hills,,,六本木ヒルズ
+stops,stop_name,en,Roppongi Sta.,,,六本木駅前
+stops,stop_name,en,Azabu Regional City Office,,,麻布地区総合支所前
+stops,stop_name,en,Toyo Eiwa Jyogakuin,,,東洋英和女学院前
+stops,stop_name,en,Azabu Jyuban Public Parking,,,麻布十番公共駐車場前
+stops,stop_name,en,Legal Affairs Bureau Ent.,,,法務局入口
+stops,stop_name,en,Higashi Azabu 2-chome(Tamachi Route),,,東麻布二丁目（田町ルート）
+stops,stop_name,en,Akabanebashi,,,赤羽橋
+stops,stop_name,en,Shiba 3-chome Nishi,,,芝三丁目西
+stops,stop_name,en,Shiba 3-chome Minami,,,芝三丁目南
+stops,stop_name,en,Mita Station on the Mita Line,,,三田線三田駅前
+stops,stop_name,en,Tamachi Sta. West Gate,,,田町駅西口
+stops,stop_name,en,Roppongi 7-chome Minami,,,六本木七丁目南
+stops,stop_name,en,Roppongi Cross-point kita,,,六本木交差点北
+stops,stop_name,en,Roppongi 7-chome,,,六本木七丁目
+stops,stop_name,en,Nogizaka Sta. Ent.,,,乃木坂駅入口
+stops,stop_name,en,Akasaka Elementary School,,,赤坂小前
+stops,stop_name,en,Akasaka 5-chome Police Box,,,赤坂五丁目交番前
+stops,stop_name,en,Akasaka Sta.,,,赤坂駅前
+stops,stop_name,en,Sannoshita,,,山王下
+stops,stop_name,en,Akasaka Mitsuke Sta.,,,赤坂見附駅
+stops,stop_name,en,Toyokawainari,,,豊川稲荷前
+stops,stop_name,en,Akasaka Regional City Office,,,赤坂地区総合支所前
+stops,stop_name,en,Takahashi Korekiyoou Memorial Park,,,高橋是清翁記念公園前
+stops,stop_name,en,Akasaka Post Office,,,赤坂郵便局前
+stops,stop_name,en,Aoyama 1-chome Sta.,,,青山一丁目駅前
+stops,stop_name,en,Minami Aoyama 1-chome,,,南青山一丁目
+stops,stop_name,en,Akasaka 8-chome,,,赤坂八丁目
+stops,stop_name,en,Sanno Hospital,,,山王病院前
+stops,stop_name,en,Nogi Park,,,乃木公園
+stops,stop_name,en,Hinokicho Park,,,檜町公園
+stops,stop_name,en,Shibaura Bus Depot,,,芝浦車庫
+stops,stop_name,en,Shibaura 4-chome,,,芝浦四丁目
+stops,stop_name,en,Yachiyo-bashi,,,八千代橋
+stops,stop_name,en,Akasaka 6-chome,,,赤坂六丁目
+stops,stop_name,en,Omotesando Sta.,,,表参道駅
+stops,stop_name,en,Minami Aoyama 3-chome Cross-point,,,南青山三丁目交差点
+stops,stop_name,en,Shinbashi Sta.,,,新橋駅
+stops,stop_name,en,Shinbashi Sta. North Gate,,,新橋駅北口
+stops,stop_name,en,Nishi shinbashi 2-chome,,,西新橋二丁目
+stops,stop_name,en,Toranomon 1-chome,,,虎ノ門一丁目
+stops,stop_name,en,Toranomon 2-chome,,,虎ノ門二丁目
+stops,stop_name,en,Atago 1-chome,,,愛宕一丁目
+stops,stop_name,en,Jikei Univ. Hospital Ent.,,,慈恵医大病院入口
+stops,stop_name,en,Atago Police Sta.,,,愛宕警察署
+stops,stop_name,en,Onarimon Sta.,,,御成門駅
+stops,stop_name,en,Minato City Hall,,,港区役所
+stops,stop_name,en,Shibakoen Sta.,,,芝公園駅
+stops,stop_name,en,Shibazonobashi,,,芝園橋
+stops,stop_name,en,Kanasugi-bashi,,,金杉橋
+stops,stop_name,en,Shiba 1-chome,,,芝一丁目
+stops,stop_name,en,Shiba 4-chome,,,芝四丁目
+stops,stop_name,en,Karasumori Jinja,,,烏森神社
+stops,stop_name,en,Shibakoen 4-chome,,,S_8285
+stops,stop_name,en,Higashi Azabu 2-chome(Azabu-East Route),,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,en,Legal Affairs Bureau,,,法務局前
+stops,stop_name,en,Iigurakatamachi,,,飯倉片町
+stops,stop_name,en,Higashi Azabu 3-chome,,,東麻布三丁目
+stops,stop_name,en,Roppongi 5-chome,,,六本木五丁目
+stops,stop_name,en,Sendaizaka-shita,,,仙台坂下
+stops,stop_name,en,Sendaizaka-ue,,,仙台坂上
+stops,stop_name,en,Moto Azabu 2-chome,,,元麻布二丁目
+stops,stop_name,en,Aiiku Clinic,,,愛育クリニック
+stops,stop_name,en,Arisugawanomiya Memorial Park,,,有栖川宮記念公園
+stops,stop_name,en,Hiroo Sta.,,,広尾駅
+stops,stop_name,en,Tengenji-bashi,,,天現寺橋
+stops,stop_name,en,Korinji,,,光林寺
+stops,stop_name,en,Honmura Elementary School Ent.,,,本村小学校入口
+stops,stop_name,en,Nino-hashi,,,二ノ橋
+stops,stop_name,en,Azabu-Juban 2-chome,,,麻布十番二丁目
+stops,stop_name,en,Azabu East St.,,,麻布いーすと通り
+stops,stop_name,en,Higashi Azabu 1-chome（Tokyo tower-shita）,,,東麻布一丁目（東京タワー下）
+stops,stop_name,en,Toranomon 5-chome,,,虎ノ門五丁目
+stops,stop_name,en,Kamiyacho Sta.,,,神谷町駅前
+stops,stop_name,en,Onarimon Kita,,,御成門北
+stops,stop_name,en,Onarimon Jr. High School,,,御成門中学校
+stops,stop_name,en,Roppongi 6-chome,,,六本木六丁目
+stops,stop_name,en,Nishi Azabu,,,西麻布
+stops,stop_name,en,Nishi Azabu 2-chome,,,西麻布二丁目
+stops,stop_name,en,Nishi Azabu 1-chome,,,西麻布一丁目
+stops,stop_name,en,Nishi Azabu 4-chome,,,西麻布四丁目
+stops,stop_name,en,Nisseki Medical Center,,,日赤医療センター
+stops,stop_name,en,Minami Aoyama 6-chome,,,南青山六丁目
+stops,stop_name,en,Seinan Elementary School,,,青南小学校
+stops,stop_name,en,Gaien-mae Sta.,,,外苑前駅
+stops,stop_name,en,Aoyama 2-chome Cross-point,,,青山二丁目交差点
+stops,stop_name,en,Moto Akasaka 1-chome,,,元赤坂一丁目
+stops,stop_name,en,Minami Aoyama 7-chome,,,南青山七丁目
+stops,stop_name,en,Shinagawa Sta. Konan Gate,,,品川駅港南口
+stops,stop_name,en,Shibaura Chuo Park Ent.,,,芝浦中央公園入口
+stops,stop_name,en,Konan 2-chome,,,港南二丁目
+stops,stop_name,en,Takanawa 4-chome,,,高輪四丁目
+stops,stop_name,en,Shinagawa Sta.Takanawa Gate,,,品川駅高輪口
+stops,stop_name,en,Tokyo Takanawa Hospital,,,東京高輪病院
+stops,stop_name,en,Takanawa 3-chome,,,高輪三丁目
+stops,stop_name,en,Takanawa Police Sta.,,,高輪警察署前
+stops,stop_name,en,Takanawadai Elementary School,,,高輪台小学校
+stops,stop_name,en,Takanawa 2-chome,,,高輪二丁目
+stops,stop_name,en,Takanawa 1-chome,,,高輪一丁目
+stops,stop_name,en,Gyoranzaka-shita,,,魚籃坂下
+stops,stop_name,en,Takanawa Regional City Office,,,高輪地区総合支所前
+stops,stop_name,en,Mita 4-chome,,,三田四丁目
+stops,stop_name,en,Mita 3-chome,,,三田三丁目
+stops,stop_name,en,Keio Univ. East Gate,,,慶應義塾東門
+stops,stop_name,en,Shibaura 1-chome,,,芝浦一丁目
+stops,stop_name,en,Takeshiba-bashi,,,竹芝橋
+stops,stop_name,en,Shibaura 2-chome,,,芝浦二丁目
+stops,stop_name,en,Shibaura 3-chome,,,芝浦三丁目
+stops,stop_name,en,Shibaura Island,,,芝浦アイランド
+stops,stop_name,en,Kaigan 3-chome,,,海岸三丁目
+stops,stop_name,en,Shibaura Futo Sta.,,,S_9367
+stops,stop_name,en,Futo Park Ent.,,,埠頭公園入口
+stops,stop_name,en,Yachiyo-bashi Higashi,,,S_9371
+stops,stop_name,en,Takahama-bashi,,,高浜橋
+stops,stop_name,en,Shibaura Chuo Park Undojo,,,芝浦中央公園運動場
+stops,stop_name,en,Hamaji-bashi,,,浜路橋
+stops,stop_name,en,Konan no Sato,,,港南の郷
+stops,stop_name,en,Konan 3-chome,,,港南三丁目
+stops,stop_name,en,Konan 4-chome,,,港南四丁目
+stops,stop_name,en,Konan Ikiiki Plaza,,,港南いきいきプラザ
+stops,stop_name,en,Shin Konan-bashi,,,新港南橋
+stops,stop_name,en,Konan 1-chome,,,港南一丁目
+stops,stop_name,en,Konan elementary school,,,港南小学校前
+stops,stop_name,en,Plaza-Shinmei,,,プラザ神明
+stops,stop_name,en,Tameike-sanno Sta.,,,溜池山王駅
+stops,stop_name,en,Aoyama Takagicho,,,青山高樹町
+stops,stop_name,en,Minato Park Shibaura,,,みなとパーク芝浦
+stops,stop_name,en,Minato City Hall Kita,,,港区役所北
+stops,stop_name,en,Shiosaibashi Kita,,,汐彩橋北
+stops,stop_name,en,Shibaura Futo Minami,,,芝浦ふ頭南
+stops,stop_name,en,Shiojibashi,,,潮路橋
+stops,stop_name,en,Kaigan 2-chomei,,,海岸二丁目
+stops,stop_name,en,Hinodesambashi Ent.,,,日の出桟橋入口
+stops,stop_name,en,Takeshibasambashi Ent.,,,竹芝桟橋入口
+stops,stop_name,zh-Hans,田町车站东口,,,田町駅東口
+stops,stop_name,zh-Hans,藻盐桥,,,藻塩橋
+stops,stop_name,zh-Hans,田町车站前,,,田町駅前
+stops,stop_name,zh-Hans,浅草线三田车站前,,,浅草線三田駅前
+stops,stop_name,zh-Hans,勤劳福祉会馆前,,,S_2629
+stops,stop_name,zh-Hans,芝五丁目,,,芝五丁目
+stops,stop_name,zh-Hans,芝三丁目,,,芝三丁目
+stops,stop_name,zh-Hans,芝三丁目北,,,芝三丁目北
+stops,stop_name,zh-Hans,赤羽桥南,,,赤羽橋南
+stops,stop_name,zh-Hans,赤羽桥车站前,,,赤羽橋駅前
+stops,stop_name,zh-Hans,中之桥,,,中ノ橋
+stops,stop_name,zh-Hans,三田一丁目,,,三田一丁目
+stops,stop_name,zh-Hans,麻布十番车站前（一之桥） ,,,麻布十番駅前（一の橋）
+stops,stop_name,zh-Hans,麻布十番,,,麻布十番
+stops,stop_name,zh-Hans,鸟居坂下,,,鳥居坂下
+stops,stop_name,zh-Hans,六本木榉坂,,,六本木けやき坂
+stops,stop_name,zh-Hans,六本木Hills,,,六本木ヒルズ
+stops,stop_name,zh-Hans,六本木车站前,,,六本木駅前
+stops,stop_name,zh-Hans,麻布地区综合支所前,,,麻布地区総合支所前
+stops,stop_name,zh-Hans,东洋英和女学院前,,,東洋英和女学院前
+stops,stop_name,zh-Hans,麻布十番公共停车场前,,,麻布十番公共駐車場前
+stops,stop_name,zh-Hans,法务局入口,,,法務局入口
+stops,stop_name,zh-Hans,东麻布二丁目(田町路线),,,東麻布二丁目（田町ルート）
+stops,stop_name,zh-Hans,赤羽桥,,,赤羽橋
+stops,stop_name,zh-Hans,芝三丁目西,,,芝三丁目西
+stops,stop_name,zh-Hans,芝三丁目南,,,芝三丁目南
+stops,stop_name,zh-Hans,三田线三田车站前,,,三田線三田駅前
+stops,stop_name,zh-Hans,田町车站西口,,,田町駅西口
+stops,stop_name,zh-Hans,六本木七丁目南,,,六本木七丁目南
+stops,stop_name,zh-Hans,六本木交叉路口北,,,六本木交差点北
+stops,stop_name,zh-Hans,六本木七丁目,,,六本木七丁目
+stops,stop_name,zh-Hans,乃木坂站入口,,,乃木坂駅入口
+stops,stop_name,zh-Hans,赤坂小学校前,,,赤坂小前
+stops,stop_name,zh-Hans,赤坂五丁目交番前,,,赤坂五丁目交番前
+stops,stop_name,zh-Hans,赤坂车站前,,,赤坂駅前
+stops,stop_name,zh-Hans,山王下,,,山王下
+stops,stop_name,zh-Hans,赤坂见附车站,,,赤坂見附駅
+stops,stop_name,zh-Hans,丰川稻荷前,,,豊川稲荷前
+stops,stop_name,zh-Hans,赤坂地区综合支所前,,,赤坂地区総合支所前
+stops,stop_name,zh-Hans,高桥是清翁记念公园前,,,高橋是清翁記念公園前
+stops,stop_name,zh-Hans,赤坂邮便局前,,,赤坂郵便局前
+stops,stop_name,zh-Hans,青山一丁目车站前,,,青山一丁目駅前
+stops,stop_name,zh-Hans,南青山一丁目,,,南青山一丁目
+stops,stop_name,zh-Hans,赤坂八丁目,,,赤坂八丁目
+stops,stop_name,zh-Hans,山王医院前,,,山王病院前
+stops,stop_name,zh-Hans,乃木公园,,,乃木公園
+stops,stop_name,zh-Hans,桧町公园,,,檜町公園
+stops,stop_name,zh-Hans,芝浦车库,,,芝浦車庫
+stops,stop_name,zh-Hans,芝浦四丁目,,,芝浦四丁目
+stops,stop_name,zh-Hans,八千代桥,,,八千代橋
+stops,stop_name,zh-Hans,赤坂六丁目,,,赤坂六丁目
+stops,stop_name,zh-Hans,表参道站,,,表参道駅
+stops,stop_name,zh-Hans,南青山三丁目交叉口,,,南青山三丁目交差点
+stops,stop_name,zh-Hans,新桥站,,,新橋駅
+stops,stop_name,zh-Hans,新桥站北口,,,新橋駅北口
+stops,stop_name,zh-Hans,西新桥二丁目,,,西新橋二丁目
+stops,stop_name,zh-Hans,虎之门一丁目,,,虎ノ門一丁目
+stops,stop_name,zh-Hans,虎之门二丁目,,,虎ノ門二丁目
+stops,stop_name,zh-Hans,爱宕一丁目,,,愛宕一丁目
+stops,stop_name,zh-Hans,慈惠医大病院入口,,,慈恵医大病院入口
+stops,stop_name,zh-Hans,爱宕警察署,,,愛宕警察署
+stops,stop_name,zh-Hans,御成门站,,,御成門駅
+stops,stop_name,zh-Hans,港区政府 ,,,港区役所
+stops,stop_name,zh-Hans,芝公园站,,,芝公園駅
+stops,stop_name,zh-Hans,芝园桥,,,芝園橋
+stops,stop_name,zh-Hans,金杉桥,,,金杉橋
+stops,stop_name,zh-Hans,芝一丁目,,,芝一丁目
+stops,stop_name,zh-Hans,芝四丁目,,,芝四丁目
+stops,stop_name,zh-Hans,乌森神社,,,烏森神社
+stops,stop_name,zh-Hans,芝公园四丁目,,,S_8285
+stops,stop_name,zh-Hans,东麻布二丁目(麻布东路线),,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,zh-Hans,法务局前,,,法務局前
+stops,stop_name,zh-Hans,饭仓片町,,,飯倉片町
+stops,stop_name,zh-Hans,东麻布三丁目,,,東麻布三丁目
+stops,stop_name,zh-Hans,六本木五丁目,,,六本木五丁目
+stops,stop_name,zh-Hans,仙台坂下,,,仙台坂下
+stops,stop_name,zh-Hans,仙台坂上,,,仙台坂上
+stops,stop_name,zh-Hans,元麻布二丁目,,,元麻布二丁目
+stops,stop_name,zh-Hans,爱育病院,,,愛育クリニック
+stops,stop_name,zh-Hans,有栖川宫纪念公园,,,有栖川宮記念公園
+stops,stop_name,zh-Hans,广尾站,,,広尾駅
+stops,stop_name,zh-Hans,天现寺桥,,,天現寺橋
+stops,stop_name,zh-Hans,光林寺,,,光林寺
+stops,stop_name,zh-Hans,本村小学入口,,,本村小学校入口
+stops,stop_name,zh-Hans,二之桥,,,二ノ橋
+stops,stop_name,zh-Hans,麻布十番二丁目,,,麻布十番二丁目
+stops,stop_name,zh-Hans,麻布东路,,,麻布いーすと通り
+stops,stop_name,zh-Hans,东麻布一丁目(东京塔下),,,東麻布一丁目（東京タワー下）
+stops,stop_name,zh-Hans,虎之门五丁目,,,虎ノ門五丁目
+stops,stop_name,zh-Hans,神谷町站前,,,神谷町駅前
+stops,stop_name,zh-Hans,御成门北,,,御成門北
+stops,stop_name,zh-Hans,御成门中学,,,御成門中学校
+stops,stop_name,zh-Hans,六本木六丁目,,,六本木六丁目
+stops,stop_name,zh-Hans,西麻布,,,西麻布
+stops,stop_name,zh-Hans,西麻布二丁目,,,西麻布二丁目
+stops,stop_name,zh-Hans,西麻布一丁目,,,西麻布一丁目
+stops,stop_name,zh-Hans,西麻布四丁目,,,西麻布四丁目
+stops,stop_name,zh-Hans,日本红十字会医疗中心,,,日赤医療センター
+stops,stop_name,zh-Hans,南青山六丁目,,,南青山六丁目
+stops,stop_name,zh-Hans,青南小学,,,青南小学校
+stops,stop_name,zh-Hans,外苑前站,,,外苑前駅
+stops,stop_name,zh-Hans,青山二丁目交叉口,,,青山二丁目交差点
+stops,stop_name,zh-Hans,元赤坂一丁目,,,元赤坂一丁目
+stops,stop_name,zh-Hans,南青山七丁目,,,南青山七丁目
+stops,stop_name,zh-Hans,品川站港南口,,,品川駅港南口
+stops,stop_name,zh-Hans,芝浦中央公园入口,,,芝浦中央公園入口
+stops,stop_name,zh-Hans,港南二丁目,,,港南二丁目
+stops,stop_name,zh-Hans,高轮四丁目,,,高輪四丁目
+stops,stop_name,zh-Hans,品川站高轮口,,,品川駅高輪口
+stops,stop_name,zh-Hans,东京高轮病院,,,東京高輪病院
+stops,stop_name,zh-Hans,高轮三丁目,,,高輪三丁目
+stops,stop_name,zh-Hans,高轮警察署前,,,高輪警察署前
+stops,stop_name,zh-Hans,高轮台小学,,,高輪台小学校
+stops,stop_name,zh-Hans,高轮二丁目,,,高輪二丁目
+stops,stop_name,zh-Hans,高轮一丁目,,,高輪一丁目
+stops,stop_name,zh-Hans,鱼蓝坂下,,,魚籃坂下
+stops,stop_name,zh-Hans,高轮地区综合支所前,,,高輪地区総合支所前
+stops,stop_name,zh-Hans,三田四丁目,,,三田四丁目
+stops,stop_name,zh-Hans,三田三丁目,,,三田三丁目
+stops,stop_name,zh-Hans,庆应义塾东门,,,慶應義塾東門
+stops,stop_name,zh-Hans,芝浦一丁目,,,芝浦一丁目
+stops,stop_name,zh-Hans,竹芝桥,,,竹芝橋
+stops,stop_name,zh-Hans,芝浦二丁目,,,芝浦二丁目
+stops,stop_name,zh-Hans,芝浦三丁目,,,芝浦三丁目
+stops,stop_name,zh-Hans,芝浦岛,,,芝浦アイランド
+stops,stop_name,zh-Hans,海岸三丁目,,,海岸三丁目
+stops,stop_name,zh-Hans,芝浦埠头站,,,S_9367
+stops,stop_name,zh-Hans,埠头公园入口,,,埠頭公園入口
+stops,stop_name,zh-Hans,八千代桥东,,,S_9371
+stops,stop_name,zh-Hans,高浜桥,,,高浜橋
+stops,stop_name,zh-Hans,芝浦中央公园运动场,,,芝浦中央公園運動場
+stops,stop_name,zh-Hans,浜路桥,,,浜路橋
+stops,stop_name,zh-Hans,港南之乡,,,港南の郷
+stops,stop_name,zh-Hans,港南三丁目,,,港南三丁目
+stops,stop_name,zh-Hans,港南四丁目,,,港南四丁目
+stops,stop_name,zh-Hans,港南生動广场,,,港南いきいきプラザ
+stops,stop_name,zh-Hans,新港南桥,,,新港南橋
+stops,stop_name,zh-Hans,港南一丁目,,,港南一丁目
+stops,stop_name,zh-Hans,港南小学,,,港南小学校前
+stops,stop_name,zh-Hans,广场神明,,,プラザ神明
+stops,stop_name,zh-Hans,溜池山王站,,,溜池山王駅
+stops,stop_name,zh-Hans,青山高树町,,,青山高樹町
+stops,stop_name,zh-Hans,港公园芝浦,,,みなとパーク芝浦
+stops,stop_name,zh-Hans,港区政府北,,,港区役所北
+stops,stop_name,zh-Hans,汐彩桥北,,,汐彩橋北
+stops,stop_name,zh-Hans,芝浦埠头南,,,芝浦ふ頭南
+stops,stop_name,zh-Hans,潮路桥,,,潮路橋
+stops,stop_name,zh-Hans,海岸二丁目,,,海岸二丁目
+stops,stop_name,zh-Hans,日出栈桥入口,,,日の出桟橋入口
+stops,stop_name,zh-Hans,竹芝栈桥入口,,,竹芝桟橋入口
+stops,stop_name,zh-TW,田町車站東口,,,田町駅東口
+stops,stop_name,zh-TW,藻鹽橋,,,藻塩橋
+stops,stop_name,zh-TW,田町車站前,,,田町駅前
+stops,stop_name,zh-TW,淺草線三田車站前,,,浅草線三田駅前
+stops,stop_name,zh-TW,勤勞福祉會館前,,,S_2629
+stops,stop_name,zh-TW,芝五丁目,,,芝五丁目
+stops,stop_name,zh-TW,芝三丁目,,,芝三丁目
+stops,stop_name,zh-TW,芝三丁目北,,,芝三丁目北
+stops,stop_name,zh-TW,赤羽橋南,,,赤羽橋南
+stops,stop_name,zh-TW,赤羽橋車站前,,,赤羽橋駅前
+stops,stop_name,zh-TW,中之橋,,,中ノ橋
+stops,stop_name,zh-TW,三田一丁目,,,三田一丁目
+stops,stop_name,zh-TW,麻布十番車站前（一之橋）,,,麻布十番駅前（一の橋）
+stops,stop_name,zh-TW,麻布十番,,,麻布十番
+stops,stop_name,zh-TW,鳥居坂下,,,鳥居坂下
+stops,stop_name,zh-TW,六本木櫸坂,,,六本木けやき坂
+stops,stop_name,zh-TW,六本木Hills,,,六本木ヒルズ
+stops,stop_name,zh-TW,六本木車站前,,,六本木駅前
+stops,stop_name,zh-TW,麻布地區綜合支所前,,,麻布地区総合支所前
+stops,stop_name,zh-TW,東洋英和女學院前,,,東洋英和女学院前
+stops,stop_name,zh-TW,麻布十番公共停車場前,,,麻布十番公共駐車場前
+stops,stop_name,zh-TW,法務局入口,,,法務局入口
+stops,stop_name,zh-TW,東麻布二丁目(田町路線),,,東麻布二丁目（田町ルート）
+stops,stop_name,zh-TW,赤羽橋,,,赤羽橋
+stops,stop_name,zh-TW,芝三丁目西,,,芝三丁目西
+stops,stop_name,zh-TW,芝三丁目南,,,芝三丁目南
+stops,stop_name,zh-TW,三田線三田車站前,,,三田線三田駅前
+stops,stop_name,zh-TW,田町車站西口,,,田町駅西口
+stops,stop_name,zh-TW,六本木七丁目南,,,六本木七丁目南
+stops,stop_name,zh-TW,六本木交叉路口北,,,六本木交差点北
+stops,stop_name,zh-TW,六本木七丁目,,,六本木七丁目
+stops,stop_name,zh-TW,乃木坂站入口,,,乃木坂駅入口
+stops,stop_name,zh-TW,赤坂小學校前,,,赤坂小前
+stops,stop_name,zh-TW,赤坂五丁目交番前,,,赤坂五丁目交番前
+stops,stop_name,zh-TW,赤坂車站前,,,赤坂駅前
+stops,stop_name,zh-TW,山王下,,,山王下
+stops,stop_name,zh-TW,赤坂見附車站,,,赤坂見附駅
+stops,stop_name,zh-TW,豐川稻荷前,,,豊川稲荷前
+stops,stop_name,zh-TW,赤坂地區綜合支所前,,,赤坂地区総合支所前
+stops,stop_name,zh-TW,高橋是清翁記念公園前,,,高橋是清翁記念公園前
+stops,stop_name,zh-TW,赤坂郵便局前,,,赤坂郵便局前
+stops,stop_name,zh-TW,青山一丁目車站前,,,青山一丁目駅前
+stops,stop_name,zh-TW,南青山一丁目,,,南青山一丁目
+stops,stop_name,zh-TW,赤坂八丁目,,,赤坂八丁目
+stops,stop_name,zh-TW,山王醫院前,,,山王病院前
+stops,stop_name,zh-TW,乃木公園,,,乃木公園
+stops,stop_name,zh-TW,檜町公園,,,檜町公園
+stops,stop_name,zh-TW,芝浦車庫,,,芝浦車庫
+stops,stop_name,zh-TW,芝浦四丁目,,,芝浦四丁目
+stops,stop_name,zh-TW,八千代橋,,,八千代橋
+stops,stop_name,zh-TW,赤坂六丁目,,,赤坂六丁目
+stops,stop_name,zh-TW,表參道站,,,表参道駅
+stops,stop_name,zh-TW,南青山三丁目交叉口,,,南青山三丁目交差点
+stops,stop_name,zh-TW,新橋站,,,新橋駅
+stops,stop_name,zh-TW,新橋站北口,,,新橋駅北口
+stops,stop_name,zh-TW,西新橋二丁目,,,西新橋二丁目
+stops,stop_name,zh-TW,虎之門一丁目,,,虎ノ門一丁目
+stops,stop_name,zh-TW,虎之門二丁目,,,虎ノ門二丁目
+stops,stop_name,zh-TW,愛宕一丁目,,,愛宕一丁目
+stops,stop_name,zh-TW,慈惠醫大病院入口,,,慈恵医大病院入口
+stops,stop_name,zh-TW,愛宕警察署,,,愛宕警察署
+stops,stop_name,zh-TW,禦成門站,,,御成門駅
+stops,stop_name,zh-TW,港區政府,,,港区役所
+stops,stop_name,zh-TW,芝公園站,,,芝公園駅
+stops,stop_name,zh-TW,芝園橋,,,芝園橋
+stops,stop_name,zh-TW,金杉橋,,,金杉橋
+stops,stop_name,zh-TW,芝一丁目,,,芝一丁目
+stops,stop_name,zh-TW,芝四丁目,,,芝四丁目
+stops,stop_name,zh-TW,烏森神社,,,烏森神社
+stops,stop_name,zh-TW,芝公園四丁目,,,S_8285
+stops,stop_name,zh-TW,東麻布二丁目(麻布東路線),,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,zh-TW,法務局前,,,法務局前
+stops,stop_name,zh-TW,飯倉片町,,,飯倉片町
+stops,stop_name,zh-TW,東麻布三丁目,,,東麻布三丁目
+stops,stop_name,zh-TW,六本木五丁目,,,六本木五丁目
+stops,stop_name,zh-TW,仙台坂下,,,仙台坂下
+stops,stop_name,zh-TW,仙台坂上,,,仙台坂上
+stops,stop_name,zh-TW,元麻布二丁目,,,元麻布二丁目
+stops,stop_name,zh-TW,愛育病院,,,愛育クリニック
+stops,stop_name,zh-TW,有棲川宮紀念公園,,,有栖川宮記念公園
+stops,stop_name,zh-TW,廣尾站,,,広尾駅
+stops,stop_name,zh-TW,天現寺橋,,,天現寺橋
+stops,stop_name,zh-TW,光林寺,,,光林寺
+stops,stop_name,zh-TW,本村小學入口,,,本村小学校入口
+stops,stop_name,zh-TW,二之橋,,,二ノ橋
+stops,stop_name,zh-TW,麻布十番二丁目,,,麻布十番二丁目
+stops,stop_name,zh-TW,麻布東路,,,麻布いーすと通り
+stops,stop_name,zh-TW,東麻布一丁目(東京塔下),,,東麻布一丁目（東京タワー下）
+stops,stop_name,zh-TW,虎之門五丁目,,,虎ノ門五丁目
+stops,stop_name,zh-TW,神谷町站前,,,神谷町駅前
+stops,stop_name,zh-TW,禦成門北,,,御成門北
+stops,stop_name,zh-TW,禦成門中學,,,御成門中学校
+stops,stop_name,zh-TW,六本木六丁目,,,六本木六丁目
+stops,stop_name,zh-TW,西麻布,,,西麻布
+stops,stop_name,zh-TW,西麻布二丁目,,,西麻布二丁目
+stops,stop_name,zh-TW,西麻布一丁目,,,西麻布一丁目
+stops,stop_name,zh-TW,西麻布四丁目,,,西麻布四丁目
+stops,stop_name,zh-TW,日本紅十字會醫療中心,,,日赤医療センター
+stops,stop_name,zh-TW,南青山六丁目,,,南青山六丁目
+stops,stop_name,zh-TW,青南小學,,,青南小学校
+stops,stop_name,zh-TW,外苑前站,,,外苑前駅
+stops,stop_name,zh-TW,青山二丁目交叉口,,,青山二丁目交差点
+stops,stop_name,zh-TW,元赤坂一丁目,,,元赤坂一丁目
+stops,stop_name,zh-TW,南青山七丁目,,,南青山七丁目
+stops,stop_name,zh-TW,品川站港南口,,,品川駅港南口
+stops,stop_name,zh-TW,芝浦中央公園入口,,,芝浦中央公園入口
+stops,stop_name,zh-TW,港南二丁目,,,港南二丁目
+stops,stop_name,zh-TW,高輪四丁目,,,高輪四丁目
+stops,stop_name,zh-TW,品川站高輪口,,,品川駅高輪口
+stops,stop_name,zh-TW,東京高輪病院,,,東京高輪病院
+stops,stop_name,zh-TW,高輪三丁目,,,高輪三丁目
+stops,stop_name,zh-TW,高輪警察署前,,,高輪警察署前
+stops,stop_name,zh-TW,高輪台小學,,,高輪台小学校
+stops,stop_name,zh-TW,高輪二丁目,,,高輪二丁目
+stops,stop_name,zh-TW,高輪一丁目,,,高輪一丁目
+stops,stop_name,zh-TW,魚藍坂下,,,魚籃坂下
+stops,stop_name,zh-TW,高輪地區綜合支所前,,,高輪地区総合支所前
+stops,stop_name,zh-TW,三田四丁目,,,三田四丁目
+stops,stop_name,zh-TW,三田三丁目,,,三田三丁目
+stops,stop_name,zh-TW,慶應義塾東門,,,慶應義塾東門
+stops,stop_name,zh-TW,芝浦一丁目,,,芝浦一丁目
+stops,stop_name,zh-TW,竹芝橋,,,竹芝橋
+stops,stop_name,zh-TW,芝浦二丁目,,,芝浦二丁目
+stops,stop_name,zh-TW,芝浦三丁目,,,芝浦三丁目
+stops,stop_name,zh-TW,芝浦島,,,芝浦アイランド
+stops,stop_name,zh-TW,海岸三丁目,,,海岸三丁目
+stops,stop_name,zh-TW,芝浦埠頭站,,,S_9367
+stops,stop_name,zh-TW,埠頭公園入口,,,埠頭公園入口
+stops,stop_name,zh-TW,八千代橋東,,,S_9371
+stops,stop_name,zh-TW,高浜橋,,,高浜橋
+stops,stop_name,zh-TW,芝浦中央公園運動場,,,芝浦中央公園運動場
+stops,stop_name,zh-TW,浜路橋,,,浜路橋
+stops,stop_name,zh-TW,港南之鄉,,,港南の郷
+stops,stop_name,zh-TW,港南三丁目,,,港南三丁目
+stops,stop_name,zh-TW,港南四丁目,,,港南四丁目
+stops,stop_name,zh-TW,港南生動廣場,,,港南いきいきプラザ
+stops,stop_name,zh-TW,新港南橋,,,新港南橋
+stops,stop_name,zh-TW,港南一丁目,,,港南一丁目
+stops,stop_name,zh-TW,港南小學,,,港南小学校前
+stops,stop_name,zh-TW,廣場神明,,,プラザ神明
+stops,stop_name,zh-TW,溜池山王站,,,溜池山王駅
+stops,stop_name,zh-TW,青山高樹町,,,青山高樹町
+stops,stop_name,zh-TW,港公園芝浦,,,みなとパーク芝浦
+stops,stop_name,zh-TW,港區政府北,,,港区役所北
+stops,stop_name,zh-TW,汐彩橋北,,,汐彩橋北
+stops,stop_name,zh-TW,芝浦埠頭南,,,芝浦ふ頭南
+stops,stop_name,zh-TW,潮路橋,,,潮路橋
+stops,stop_name,zh-TW,海岸二丁目,,,海岸二丁目
+stops,stop_name,zh-TW,日出棧橋入口,,,日の出桟橋入口
+stops,stop_name,zh-TW,竹芝棧橋入口,,,竹芝桟橋入口
+stops,stop_name,ko,타마치역 동쪽출구,,,田町駅東口
+stops,stop_name,ko,모시오바시,,,藻塩橋
+stops,stop_name,ko,타마치역 앞,,,田町駅前
+stops,stop_name,ko,아사쿠사선 미타 역앞,,,浅草線三田駅前
+stops,stop_name,ko,근로 복지회관 앞,,,S_2629
+stops,stop_name,ko,시바 5쵸메,,,芝五丁目
+stops,stop_name,ko,시바 3쵸메,,,芝三丁目
+stops,stop_name,ko,시바 3쵸메 북쪽,,,芝三丁目北
+stops,stop_name,ko,아카바네바시 남쪽,,,赤羽橋南
+stops,stop_name,ko,아카바네바시 역앞,,,赤羽橋駅前
+stops,stop_name,ko,나카노하시,,,中ノ橋
+stops,stop_name,ko,미타 1쵸메,,,三田一丁目
+stops,stop_name,ko,아자부쥬방 역앞（이치노하시） ,,,麻布十番駅前（一の橋）
+stops,stop_name,ko,아자부쥬방,,,麻布十番
+stops,stop_name,ko,도리이사카시타,,,鳥居坂下
+stops,stop_name,ko,록봉기 케야키자카,,,六本木けやき坂
+stops,stop_name,ko,록봉기 힐즈,,,六本木ヒルズ
+stops,stop_name,ko,록봉기역앞,,,六本木駅前
+stops,stop_name,ko,아자부 지구 소고지쇼 앞,,,麻布地区総合支所前
+stops,stop_name,ko,도요에이와 여학원앞,,,東洋英和女学院前
+stops,stop_name,ko,아자부쥬방 공공 주차장 앞,,,麻布十番公共駐車場前
+stops,stop_name,ko,법무국 입구,,,法務局入口
+stops,stop_name,ko,히가시아자부 2쵸메(타 마치경로),,,東麻布二丁目（田町ルート）
+stops,stop_name,ko,아카바네 하시,,,赤羽橋
+stops,stop_name,ko,시바 3쵸메 서쪽,,,芝三丁目西
+stops,stop_name,ko,시바 3쵸메 남쪽,,,芝三丁目南
+stops,stop_name,ko,미라선 미타 역앞,,,三田線三田駅前
+stops,stop_name,ko,타마치역 사쏙츤구,,,田町駅西口
+stops,stop_name,ko,록봉기 7쵸메 남쪽,,,六本木七丁目南
+stops,stop_name,ko,록봉기 사거리 북쪽,,,六本木交差点北
+stops,stop_name,ko,록봉기 7쵸메,,,六本木七丁目
+stops,stop_name,ko,노기자카 역 입구,,,乃木坂駅入口
+stops,stop_name,ko,아카사카 쇼학교 앞,,,赤坂小前
+stops,stop_name,ko,아카사카 5쵸메고방 앞,,,赤坂五丁目交番前
+stops,stop_name,ko,아카사카역 앞,,,赤坂駅前
+stops,stop_name,ko,산노시다,,,山王下
+stops,stop_name,ko,아카사카 미츠케 역,,,赤坂見附駅
+stops,stop_name,ko,토요카와이나리 앞,,,豊川稲荷前
+stops,stop_name,ko,아카사카 지구 소고지쇼 앞,,,赤坂地区総合支所前
+stops,stop_name,ko,타카하시고레키요옹 기념공원 앞,,,高橋是清翁記念公園前
+stops,stop_name,ko,아카사카 우선국 앞,,,赤坂郵便局前
+stops,stop_name,ko,아오야마 1쵸메역 앞,,,青山一丁目駅前
+stops,stop_name,ko,미나미아오야마 1쵸메,,,南青山一丁目
+stops,stop_name,ko,아카사카 8쵸메,,,赤坂八丁目
+stops,stop_name,ko,산노 병원 앞,,,山王病院前
+stops,stop_name,ko,노기공원,,,乃木公園
+stops,stop_name,ko,히노키쵸 공원,,,檜町公園
+stops,stop_name,ko,시바우라 차고,,,芝浦車庫
+stops,stop_name,ko,시바우라 4쵸메,,,芝浦四丁目
+stops,stop_name,ko,야치요바시,,,八千代橋
+stops,stop_name,ko,아카사카 6쵸메,,,赤坂六丁目
+stops,stop_name,ko,오모테산도역,,,表参道駅
+stops,stop_name,ko,미나미아오야마3쵸메교차로,,,南青山三丁目交差点
+stops,stop_name,ko,신바시역,,,新橋駅
+stops,stop_name,ko,신바시역 북쪽 출구,,,新橋駅北口
+stops,stop_name,ko,니시신바시 2쵸메,,,西新橋二丁目
+stops,stop_name,ko,토라노몬 1쵸메,,,虎ノ門一丁目
+stops,stop_name,ko,토라노몬 2쵸메,,,虎ノ門二丁目
+stops,stop_name,ko,아타고 1쵸메,,,愛宕一丁目
+stops,stop_name,ko,지케이의대병원 입구,,,慈恵医大病院入口
+stops,stop_name,ko,아타고 경찰서,,,愛宕警察署
+stops,stop_name,ko,오나리몬 역,,,御成門駅
+stops,stop_name,ko,미나토구청,,,港区役所
+stops,stop_name,ko,시바공원 역,,,芝公園駅
+stops,stop_name,ko,시바조노바시,,,芝園橋
+stops,stop_name,ko,카나수기바시,,,金杉橋
+stops,stop_name,ko,시바 1쵸메,,,芝一丁目
+stops,stop_name,ko,시바 4쵸메,,,芝四丁目
+stops,stop_name,ko,카라수모리 신사,,,烏森神社
+stops,stop_name,ko,시바공원 4쵸메,,,S_8285
+stops,stop_name,ko,히가시아자부 2쵸메(리넨 동쪽 루트),,,東麻布二丁目（ 麻布東ルート）
+stops,stop_name,ko,법무국앞,,,法務局前
+stops,stop_name,ko,이이구라카타마치,,,飯倉片町
+stops,stop_name,ko,히가시아자부 3쵸메,,,東麻布三丁目
+stops,stop_name,ko,록봉기 5쵸메,,,六本木五丁目
+stops,stop_name,ko,센다이자카시타,,,仙台坂下
+stops,stop_name,ko,센다이자카우에,,,仙台坂上
+stops,stop_name,ko,모토아자부 2쵸메,,,元麻布二丁目
+stops,stop_name,ko,아이이쿠 병원,,,愛育クリニック
+stops,stop_name,ko,아리수가와미야 기념공원,,,有栖川宮記念公園
+stops,stop_name,ko,히로오 역,,,広尾駅
+stops,stop_name,ko,텐겐지바시,,,天現寺橋
+stops,stop_name,ko,코린지 절,,,光林寺
+stops,stop_name,ko,혼무라 초등학교 입구,,,本村小学校入口
+stops,stop_name,ko,니노하시,,,二ノ橋
+stops,stop_name,ko,아자부쥬방 2쵸메,,,麻布十番二丁目
+stops,stop_name,ko,아자부 이스트 도오리,,,麻布いーすと通り
+stops,stop_name,ko,히가시아자부 1쵸메（토쿄타워시타）,,,東麻布一丁目（東京タワー下）
+stops,stop_name,ko,토라노몬 5쵸메,,,虎ノ門五丁目
+stops,stop_name,ko,카미야쵸 역앞,,,神谷町駅前
+stops,stop_name,ko,오나리몬 키타,,,御成門北
+stops,stop_name,ko,오나리몬 중학교,,,御成門中学校
+stops,stop_name,ko,록봉기 6쵸메,,,六本木六丁目
+stops,stop_name,ko,니시 아자부,,,西麻布
+stops,stop_name,ko,니시아자부 2쵸메,,,西麻布二丁目
+stops,stop_name,ko,니시아자부 1쵸메,,,西麻布一丁目
+stops,stop_name,ko,니시아자부 4쵸메,,,西麻布四丁目
+stops,stop_name,ko,닛세키 의료센터,,,日赤医療センター
+stops,stop_name,ko,미나미 아오야마 6쵸메,,,南青山六丁目
+stops,stop_name,ko,세이난 초등학교,,,青南小学校
+stops,stop_name,ko,가이엔앞역,,,外苑前駅
+stops,stop_name,ko,아오야마 2쵸메교차로,,,青山二丁目交差点
+stops,stop_name,ko,모토아카사카 1쵸메,,,元赤坂一丁目
+stops,stop_name,ko,미나미 아오야마 7쵸메,,,南青山七丁目
+stops,stop_name,ko,시나가와역 고우난입구,,,品川駅港南口
+stops,stop_name,ko,시바우라 중앙공원입구,,,芝浦中央公園入口
+stops,stop_name,ko,코우난 2쵸메,,,港南二丁目
+stops,stop_name,ko,타카나와 4쵸메,,,高輪四丁目
+stops,stop_name,ko,시나가와역 다카나와입구,,,品川駅高輪口
+stops,stop_name,ko,토쿄 타카나와병원,,,東京高輪病院
+stops,stop_name,ko,타카나와 3쵸메,,,高輪三丁目
+stops,stop_name,ko,타카나와 경찰서앞,,,高輪警察署前
+stops,stop_name,ko,타카나와다이 초등학교,,,高輪台小学校
+stops,stop_name,ko,타카나와 2쵸메,,,高輪二丁目
+stops,stop_name,ko,타카나와 1쵸메,,,高輪一丁目
+stops,stop_name,ko,교란자카시타,,,魚籃坂下
+stops,stop_name,ko,타카나와지구 종합지소앞,,,高輪地区総合支所前
+stops,stop_name,ko,미타 4쵸메,,,三田四丁目
+stops,stop_name,ko,미타 3쵸메,,,三田三丁目
+stops,stop_name,ko,케이오대학 동문,,,慶應義塾東門
+stops,stop_name,ko,시바우라 1쵸메,,,芝浦一丁目
+stops,stop_name,ko,타케시바바시,,,竹芝橋
+stops,stop_name,ko,시바우라 2쵸메,,,芝浦二丁目
+stops,stop_name,ko,시바우라 3쵸메,,,芝浦三丁目
+stops,stop_name,ko,시바 아일랜드,,,芝浦アイランド
+stops,stop_name,ko,카이간 3쵸메,,,海岸三丁目
+stops,stop_name,ko,시바우라 부두역,,,S_9367
+stops,stop_name,ko,부두공원 입구,,,埠頭公園入口
+stops,stop_name,ko,야치요바시 히가시,,,S_9371
+stops,stop_name,ko,타카하마바시,,,高浜橋
+stops,stop_name,ko,시바우라 중앙공원 운동장,,,芝浦中央公園運動場
+stops,stop_name,ko,하마지바시,,,浜路橋
+stops,stop_name,ko,코우난노 사토,,,港南の郷
+stops,stop_name,ko,코우난 3쵸메,,,港南三丁目
+stops,stop_name,ko,코우난 4쵸메,,,港南四丁目
+stops,stop_name,ko,코우난 이키이키 플라자,,,港南いきいきプラザ
+stops,stop_name,ko,신코우난바시,,,新港南橋
+stops,stop_name,ko,코우난 1쵸메,,,港南一丁目
+stops,stop_name,ko,코우난 초등학교,,,港南小学校前
+stops,stop_name,ko,플라자 신명,,,プラザ神明
+stops,stop_name,ko,타메이케산노 역,,,溜池山王駅
+stops,stop_name,ko,아오야마 타카기쵸,,,青山高樹町
+stops,stop_name,ko,미나토공원 시바우라,,,みなとパーク芝浦
+stops,stop_name,ko,미나토구청 북쪽,,,港区役所北
+stops,stop_name,ko,시오사이바시 북쪽,,,汐彩橋北
+stops,stop_name,ko,시바우라 부두 남쪽,,,芝浦ふ頭南
+stops,stop_name,ko,시오지바시,,,潮路橋
+stops,stop_name,ko,카이간 2쵸메,,,海岸二丁目
+stops,stop_name,ko,히노데 산바시 입구,,,日の出桟橋入口
+stops,stop_name,ko,타케시바 산바시 입구,,,竹芝桟橋入口
+trips,trip_headsign,ja,六本木ヒルズ行,,,六本木ヒルズ行
+trips,trip_headsign,ja,芝浦車庫行,,,芝浦車庫行
+trips,trip_headsign,ja,田町駅東口行,,,田町駅東口行
+trips,trip_headsign,ja,新橋駅行,,,新橋駅行
+trips,trip_headsign,ja,みなとパーク芝浦行,,,みなとパーク芝浦行
+trips,trip_headsign,ja,港区役所行,,,港区役所行
+trips,trip_headsign,ja,港区役所北行,,,港区役所北行
+trips,trip_headsign,ja,広尾駅行,,,広尾駅行
+trips,trip_headsign,ja,赤坂見附駅行,,,赤坂見附駅行
+trips,trip_headsign,ja,品川駅港南口行,,,品川駅港南口行
+trips,trip_headsign,ja,浅草線三田駅前行,,,浅草線三田駅前行
+trips,trip_headsign,ja,海岸三丁目行,,,海岸三丁目行
+trips,trip_headsign,ja,竹芝桟橋入口行,,,竹芝桟橋入口行
+trips,trip_headsign,ja,埠頭公園入口行,,,埠頭公園入口行
+trips,trip_headsign,en,To Roppongi Hills,,,六本木ヒルズ行
+trips,trip_headsign,en,To Shibaura Bus Depot,,,芝浦車庫行
+trips,trip_headsign,en,To Tamachi Sta. East Gate,,,田町駅東口行
+trips,trip_headsign,en,To Shinbashi Sta.,,,新橋駅行
+trips,trip_headsign,en,To Minato Park Shibaura,,,みなとパーク芝浦行
+trips,trip_headsign,en,To Minato City Hall,,,港区役所行
+trips,trip_headsign,en,To Minato City Hall Kita,,,港区役所北行
+trips,trip_headsign,en,To Hiroo Sta.,,,広尾駅行
+trips,trip_headsign,en,To Akasaka Mitsuke Sta.,,,赤坂見附駅行
+trips,trip_headsign,en,To Shinagawa Sta. Konan Gate,,,品川駅港南口行
+trips,trip_headsign,en,To Mita Station on the Asakusa Line,,,浅草線三田駅前行
+trips,trip_headsign,en,To Kaigan 3-chome,,,海岸三丁目行
+trips,trip_headsign,en,To Takeshibasambashi Ent.,,,竹芝桟橋入口行
+trips,trip_headsign,en,To Futo Park Ent.,,,埠頭公園入口行
+trips,trip_headsign,zh-Hans,前往六本木Hills,,,六本木ヒルズ行
+trips,trip_headsign,zh-Hans,前往芝浦车库,,,芝浦車庫行
+trips,trip_headsign,zh-Hans,前往田町车站东口,,,田町駅東口行
+trips,trip_headsign,zh-Hans,前往新桥站,,,新橋駅行
+trips,trip_headsign,zh-Hans,前往港公园芝浦,,,みなとパーク芝浦行
+trips,trip_headsign,zh-Hans,前往港区政府 ,,,港区役所行
+trips,trip_headsign,zh-Hans,前往港区政府北,,,港区役所北行
+trips,trip_headsign,zh-Hans,前往广尾站,,,広尾駅行
+trips,trip_headsign,zh-Hans,前往赤坂见附车站,,,赤坂見附駅行
+trips,trip_headsign,zh-Hans,前往品川站港南口,,,品川駅港南口行
+trips,trip_headsign,zh-Hans,前往浅草线三田车站前,,,浅草線三田駅前行
+trips,trip_headsign,zh-Hans,前往海岸三丁目,,,海岸三丁目行
+trips,trip_headsign,zh-Hans,前往竹芝栈桥入口,,,竹芝桟橋入口行
+trips,trip_headsign,zh-Hans,前往埠头公园入口,,,埠頭公園入口行
+trips,trip_headsign,zh-TW,前往六本木Hills,,,六本木ヒルズ行
+trips,trip_headsign,zh-TW,前往芝浦車庫,,,芝浦車庫行
+trips,trip_headsign,zh-TW,前往田町車站東口,,,田町駅東口行
+trips,trip_headsign,zh-TW,前往新橋站,,,新橋駅行
+trips,trip_headsign,zh-TW,前往港公園芝浦,,,みなとパーク芝浦行
+trips,trip_headsign,zh-TW,前往港區政府,,,港区役所行
+trips,trip_headsign,zh-TW,前往港區政府北,,,港区役所北行
+trips,trip_headsign,zh-TW,前往廣尾站,,,広尾駅行
+trips,trip_headsign,zh-TW,前往赤坂見附車站,,,赤坂見附駅行
+trips,trip_headsign,zh-TW,前往品川站港南口,,,品川駅港南口行
+trips,trip_headsign,zh-TW,前往淺草線三田車站前,,,浅草線三田駅前行
+trips,trip_headsign,zh-TW,前往海岸三丁目,,,海岸三丁目行
+trips,trip_headsign,zh-TW,前往竹芝棧橋入口,,,竹芝桟橋入口行
+trips,trip_headsign,zh-TW,前往埠頭公園入口,,,埠頭公園入口行
+trips,trip_headsign,ko,록봉기 힐즈 행,,,六本木ヒルズ行
+trips,trip_headsign,ko,시바우라 차고 행,,,芝浦車庫行
+trips,trip_headsign,ko,타마치역 동쪽출구 행,,,田町駅東口行
+trips,trip_headsign,ko,신바시역 행,,,新橋駅行
+trips,trip_headsign,ko,미나토공원 시바우라 행,,,みなとパーク芝浦行
+trips,trip_headsign,ko,미나토구청 행,,,港区役所行
+trips,trip_headsign,ko,미나토구청 북쪽 행,,,港区役所北行
+trips,trip_headsign,ko,히로오 역 행,,,広尾駅行
+trips,trip_headsign,ko,아카사카 미츠케 역 행,,,赤坂見附駅行
+trips,trip_headsign,ko,시나가와역 고우난입구 행,,,品川駅港南口行
+trips,trip_headsign,ko,아사쿠사선 미타 역앞 행,,,浅草線三田駅前行
+trips,trip_headsign,ko,카이간 3쵸메 행,,,海岸三丁目行
+trips,trip_headsign,ko,타케시바 산바시 입구 행,,,竹芝桟橋入口行
+trips,trip_headsign,ko,부두공원 입구 행,,,埠頭公園入口行
+stop_times,stop_headsign,en,Akasaka Mitsuke,,,赤坂見附方面
+stop_times,stop_headsign,en,Roppongi Hills,,,六本木ヒルズ方面
+stop_times,stop_headsign,en,Roppongi Hills via Tamachi Sta. East Gate,,,田町駅東口経由六本木ヒルズ方面
+stop_times,stop_headsign,en,Shibaura Bus Depot via Tamachi Sta. East Gate,,,田町駅東口経由芝浦車庫
+stop_times,stop_headsign,en,Shibaura Bus Depot,,,芝浦車庫
+stop_times,stop_headsign,en,Tamachi Sta. East Gate,,,田町駅東口
+stop_times,stop_headsign,en,Akabanebashi Minami via Tamachi Sta. East Gate,,,田町駅東口経由赤羽橋南
+stop_times,stop_headsign,en,Akabanebashi Minami,,,赤羽橋南
+trips,trip_headsign,en,to Akabanebashi Minami,,,赤羽橋南行

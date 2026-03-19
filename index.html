@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港区ちぃばす 停留所一覧</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Hiragino Sans', 'Meiryo', sans-serif; }
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 320px;
+            min-width: 260px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar-header {
+            padding: 12px 16px;
+            background: #2c5aa0;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .search-wrap {
+            padding: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .search-wrap input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .search-wrap input:focus {
+            outline: none;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 2px rgba(44,90,160,0.2);
+        }
+        .stop-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 0;
+        }
+        .stop-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background 0.15s;
+        }
+        .stop-item:hover {
+            background: #e9ecef;
+        }
+        .stop-item.highlight {
+            background: #cce5ff;
+        }
+        .stop-item .name {
+            font-weight: 500;
+            color: #212529;
+        }
+        .stop-item .ids {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+        #map {
+            flex: 1;
+            min-width: 0;
+        }
+        .loading {
+            padding: 24px;
+            text-align: center;
+            color: #6c757d;
+        }
+        .error {
+            padding: 24px;
+            color: #c62828;
+        }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; height: auto; min-height: 100vh; }
+            .sidebar { width: 100%; max-height: 45vh; border-right: none; border-bottom: 1px solid #dee2e6; }
+            #map { min-height: 55vh; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">港区ちぃばす 停留所一覧</div>
+            <div class="search-wrap">
+                <input type="text" id="search" placeholder="停留所名で検索…" aria-label="検索">
+            </div>
+            <div id="stop-list" class="stop-list">
+                <div class="loading">読み込み中…</div>
+            </div>
+        </aside>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        (function () {
+            const MINATO_CENTER = [35.655, 139.735];
+            const DEFAULT_ZOOM = 14;
+
+            const map = L.map('map').setView(MINATO_CENTER, DEFAULT_ZOOM);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            const stopListEl = document.getElementById('stop-list');
+            const searchEl = document.getElementById('search');
+
+            function parseCSV(text) {
+                const lines = text.trim().split(/\r?\n/);
+                if (lines.length < 2) return [];
+                const header = lines[0].split(',');
+                const rows = [];
+                for (let i = 1; i < lines.length; i++) {
+                    const cols = lines[i].split(',');
+                    const row = {};
+                    header.forEach(function (h, j) {
+                        row[h.trim()] = cols[j] != null ? String(cols[j]).trim() : '';
+                    });
+                    rows.push(row);
+                }
+                return rows;
+            }
+
+            function buildStops(raw) {
+                const byName = {};
+                raw.forEach(function (r) {
+                    const name = r.stop_name || '';
+                    const lat = parseFloat(r.stop_lat);
+                    const lon = parseFloat(r.stop_lon);
+                    if (!name || isNaN(lat) || isNaN(lon)) return;
+                    if (!byName[name]) {
+                        byName[name] = { name: name, lat: lat, lon: lon, ids: [] };
+                    }
+                    if (byName[name].ids.indexOf(r.stop_id) === -1) {
+                        byName[name].ids.push(r.stop_id);
+                    }
+                });
+                return Object.keys(byName).sort(function (a, b) {
+                    return a.localeCompare(b, 'ja');
+                }).map(function (k) { return byName[k]; });
+            }
+
+            function renderList(stops, filter) {
+                const q = (filter || '').trim().toLowerCase();
+                const filtered = q
+                    ? stops.filter(function (s) { return s.name.toLowerCase().indexOf(q) !== -1; })
+                    : stops;
+
+                stopListEl.innerHTML = '';
+                if (filtered.length === 0) {
+                    stopListEl.innerHTML = '<div class="loading">該当する停留所がありません</div>';
+                    return;
+                }
+
+                filtered.forEach(function (stop) {
+                    const fullIndex = stops.findIndex(function (s) { return s.name === stop.name; });
+                    const div = document.createElement('div');
+                    div.className = 'stop-item';
+                    div.dataset.index = String(fullIndex);
+                    div.innerHTML = '<span class="name">' + escapeHtml(stop.name) + '</span>' +
+                        (stop.ids.length > 1 ? '<div class="ids">' + escapeHtml(stop.ids.length) + ' 箇所</div>' : '');
+                    div.addEventListener('click', function () {
+                        document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
+                        div.classList.add('highlight');
+                        map.setView([stop.lat, stop.lon], 17);
+                        if (fullIndex >= 0 && markers[fullIndex]) markers[fullIndex].openPopup();
+                    });
+                    stopListEl.appendChild(div);
+                });
+            }
+
+            function escapeHtml(s) {
+                const div = document.createElement('div');
+                div.textContent = s;
+                return div.innerHTML;
+            }
+
+            let stops = [];
+            let markers = [];
+
+            fetch('gtfs/stops.txt')
+                .then(function (r) {
+                    if (!r.ok) throw new Error('stops.txt の読み込みに失敗しました');
+                    return r.text();
+                })
+                .then(function (text) {
+                    const raw = parseCSV(text);
+                    stops = buildStops(raw);
+                    markers = [];
+                    const layer = L.layerGroup().addTo(map);
+                    stops.forEach(function (stop, i) {
+                        const m = L.marker([stop.lat, stop.lon])
+                            .bindPopup('<strong>' + escapeHtml(stop.name) + '</strong>')
+                            .on('click', function () {
+                                document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
+                                const item = stopListEl.querySelector('.stop-item[data-index="' + i + '"]');
+                                if (item) item.classList.add('highlight');
+                            });
+                        markers.push(m);
+                        layer.addLayer(m);
+                    });
+                    renderList(stops);
+                })
+                .catch(function (err) {
+                    stopListEl.innerHTML = '<div class="error">' + escapeHtml(err.message) + '</div>';
+                });
+
+            searchEl.addEventListener('input', function () {
+                renderList(stops, searchEl.value);
+            });
+        })();
+    </script>
+</body>
+</html>

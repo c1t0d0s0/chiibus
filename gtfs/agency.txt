@@ -1,0 +1,2 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url,agency_email
+8010401035990,株式会社フジエクスプレス　ちぃばす,http://www.fujikyu.co.jp/fujiexpress/,Asia/Tokyo,ja,03-3455-2211,,

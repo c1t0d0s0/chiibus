@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version
+株式会社フジエクスプレス,http://www.fujikyu.co.jp/fujiexpress/,ja,20260105,20261231,202512231610
