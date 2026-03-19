@@ -428,6 +428,11 @@
 
             function getTimetableForStop(stop, routeId, directionHeadsign) {
                 if (!routeId || !routeIdToTripIds[routeId]) return [];
+                var stopIdSet = directionHeadsign
+                    ? (directionStopIds[routeId + '\t' + directionHeadsign] || {})
+                    : (routeIdToStopIds[routeId] || {});
+                var stopIdsToUse = stop.ids.filter(function (sid) { return stopIdSet[sid]; });
+                if (stopIdsToUse.length === 0) return [];
                 var tripIds = directionHeadsign
                     ? (directionTripIds[routeId + '\t' + directionHeadsign] || [])
                     : routeIdToTripIds[routeId];
@@ -436,7 +441,7 @@
                 var tripSet = {};
                 tripIdsToday.forEach(function (tid) { tripSet[tid] = true; });
                 var times = [];
-                stop.ids.forEach(function (sid) {
+                stopIdsToUse.forEach(function (sid) {
                     (stopTimesByStopId[sid] || []).forEach(function (x) {
                         if (tripSet[x.tripId]) times.push(x.time);
                     });
