@@ -29,6 +29,29 @@
             font-weight: bold;
             font-size: 1rem;
         }
+        .route-wrap {
+            padding: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .route-wrap label {
+            display: block;
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 4px;
+        }
+        .route-wrap select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background: #fff;
+            cursor: pointer;
+        }
+        .route-wrap select:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
         .search-wrap {
             padding: 8px;
             border-bottom: 1px solid #dee2e6;
@@ -95,6 +118,12 @@
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">港区ちぃばす 停留所一覧</div>
+            <div class="route-wrap">
+                <label for="route-select">ルート</label>
+                <select id="route-select" aria-label="ルート選択">
+                    <option value="">全停留所</option>
+                </select>
+            </div>
             <div class="search-wrap">
                 <input type="text" id="search" placeholder="停留所名で検索…" aria-label="検索">
             </div>
@@ -118,6 +147,7 @@
 
             const stopListEl = document.getElementById('stop-list');
             const searchEl = document.getElementById('search');
+            const routeSelectEl = document.getElementById('route-select');
 
             function parseCSV(text) {
                 const lines = text.trim().split(/\r?\n/);
@@ -154,6 +184,70 @@
                 }).map(function (k) { return byName[k]; });
             }
 
+            function buildRouteIdToStopIds(tripsRaw, stopTimesRaw) {
+                const routeToTrips = {};
+                tripsRaw.forEach(function (r) {
+                    const rid = r.route_id || '';
+                    const tid = r.trip_id || '';
+                    if (!rid || !tid) return;
+                    if (!routeToTrips[rid]) routeToTrips[rid] = [];
+                    routeToTrips[rid].push(tid);
+                });
+                const tripToStops = {};
+                stopTimesRaw.forEach(function (r) {
+                    const tid = r.trip_id || '';
+                    const sid = r.stop_id || '';
+                    if (!tid || !sid) return;
+                    if (!tripToStops[tid]) tripToStops[tid] = [];
+                    tripToStops[tid].push(sid);
+                });
+                const routeIdToStopIds = {};
+                Object.keys(routeToTrips).forEach(function (rid) {
+                    const set = {};
+                    routeToTrips[rid].forEach(function (tid) {
+                        (tripToStops[tid] || []).forEach(function (sid) { set[sid] = true; });
+                    });
+                    routeIdToStopIds[rid] = set;
+                });
+                return routeIdToStopIds;
+            }
+
+            function escapeHtml(s) {
+                const div = document.createElement('div');
+                div.textContent = s;
+                return div.innerHTML;
+            }
+
+            let allStops = [];
+            let visibleStops = [];
+            let markers = [];
+            let markersLayer = L.layerGroup().addTo(map);
+            let routeIdToStopIds = {};
+
+            function getVisibleStops(routeId) {
+                if (!routeId || !routeIdToStopIds[routeId]) return allStops;
+                const set = routeIdToStopIds[routeId];
+                return allStops.filter(function (s) {
+                    return s.ids.some(function (id) { return set[id]; });
+                });
+            }
+
+            function updateMarkers() {
+                markersLayer.clearLayers();
+                markers = [];
+                visibleStops.forEach(function (stop, i) {
+                    const m = L.marker([stop.lat, stop.lon])
+                        .bindPopup('<strong>' + escapeHtml(stop.name) + '</strong>')
+                        .on('click', function () {
+                            document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
+                            const item = stopListEl.querySelector('.stop-item[data-index="' + i + '"]');
+                            if (item) item.classList.add('highlight');
+                        });
+                    markers.push(m);
+                    markersLayer.addLayer(m);
+                });
+            }
+
             function renderList(stops, filter) {
                 const q = (filter || '').trim().toLowerCase();
                 const filtered = q
@@ -167,60 +261,64 @@
                 }
 
                 filtered.forEach(function (stop) {
-                    const fullIndex = stops.findIndex(function (s) { return s.name === stop.name; });
+                    const visibleIndex = visibleStops.findIndex(function (s) { return s.name === stop.name; });
                     const div = document.createElement('div');
                     div.className = 'stop-item';
-                    div.dataset.index = String(fullIndex);
+                    div.dataset.index = String(visibleIndex);
                     div.innerHTML = '<span class="name">' + escapeHtml(stop.name) + '</span>' +
                         (stop.ids.length > 1 ? '<div class="ids">' + escapeHtml(stop.ids.length) + ' 箇所</div>' : '');
                     div.addEventListener('click', function () {
                         document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
                         div.classList.add('highlight');
                         map.setView([stop.lat, stop.lon], 17);
-                        if (fullIndex >= 0 && markers[fullIndex]) markers[fullIndex].openPopup();
+                        if (visibleIndex >= 0 && markers[visibleIndex]) markers[visibleIndex].openPopup();
                     });
                     stopListEl.appendChild(div);
                 });
             }
 
-            function escapeHtml(s) {
-                const div = document.createElement('div');
-                div.textContent = s;
-                return div.innerHTML;
+            function applyRouteFilter() {
+                const routeId = routeSelectEl.value || '';
+                visibleStops = getVisibleStops(routeId);
+                updateMarkers();
+                renderList(visibleStops, searchEl.value);
             }
 
-            let stops = [];
-            let markers = [];
+            Promise.all([
+                fetch('gtfs/routes.txt').then(function (r) { if (!r.ok) throw new Error('routes.txt'); return r.text(); }),
+                fetch('gtfs/trips.txt').then(function (r) { if (!r.ok) throw new Error('trips.txt'); return r.text(); }),
+                fetch('gtfs/stop_times.txt').then(function (r) { if (!r.ok) throw new Error('stop_times.txt'); return r.text(); }),
+                fetch('gtfs/stops.txt').then(function (r) { if (!r.ok) throw new Error('stops.txt'); return r.text(); })
+            ]).then(function (texts) {
+                const routesRaw = parseCSV(texts[0]);
+                const tripsRaw = parseCSV(texts[1]);
+                const stopTimesRaw = parseCSV(texts[2]);
+                const stopsRaw = parseCSV(texts[3]);
 
-            fetch('gtfs/stops.txt')
-                .then(function (r) {
-                    if (!r.ok) throw new Error('stops.txt の読み込みに失敗しました');
-                    return r.text();
-                })
-                .then(function (text) {
-                    const raw = parseCSV(text);
-                    stops = buildStops(raw);
-                    markers = [];
-                    const layer = L.layerGroup().addTo(map);
-                    stops.forEach(function (stop, i) {
-                        const m = L.marker([stop.lat, stop.lon])
-                            .bindPopup('<strong>' + escapeHtml(stop.name) + '</strong>')
-                            .on('click', function () {
-                                document.querySelectorAll('.stop-item.highlight').forEach(function (el) { el.classList.remove('highlight'); });
-                                const item = stopListEl.querySelector('.stop-item[data-index="' + i + '"]');
-                                if (item) item.classList.add('highlight');
-                            });
-                        markers.push(m);
-                        layer.addLayer(m);
-                    });
-                    renderList(stops);
-                })
-                .catch(function (err) {
-                    stopListEl.innerHTML = '<div class="error">' + escapeHtml(err.message) + '</div>';
+                routeIdToStopIds = buildRouteIdToStopIds(tripsRaw, stopTimesRaw);
+
+                routesRaw.forEach(function (r) {
+                    const id = r.route_id || '';
+                    const shortName = r.route_short_name || '';
+                    const longName = r.route_long_name || '';
+                    if (!id) return;
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.textContent = shortName ? shortName + '（' + longName + '）' : longName || id;
+                    routeSelectEl.appendChild(opt);
                 });
 
+                allStops = buildStops(stopsRaw);
+                visibleStops = allStops;
+                updateMarkers();
+                renderList(visibleStops, searchEl.value);
+            }).catch(function (err) {
+                stopListEl.innerHTML = '<div class="error">読み込みに失敗しました: ' + escapeHtml(err.message) + '</div>';
+            });
+
+            routeSelectEl.addEventListener('change', applyRouteFilter);
             searchEl.addEventListener('input', function () {
-                renderList(stops, searchEl.value);
+                renderList(visibleStops, searchEl.value);
             });
         })();
     </script>
