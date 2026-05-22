@@ -145,6 +145,7 @@ stops,stop_name,ja,潮路橋,,,潮路橋
 stops,stop_name,ja,海岸二丁目,,,海岸二丁目
 stops,stop_name,ja,日の出桟橋入口,,,日の出桟橋入口
 stops,stop_name,ja,竹芝桟橋入口,,,竹芝桟橋入口
+stops,stop_name,ja,虎の門病院,,,虎の門病院
 stops,stop_name,ja-Hrkt,たまちえきひがしぐち,,,田町駅東口
 stops,stop_name,ja-Hrkt,もしおばし,,,藻塩橋
 stops,stop_name,ja-Hrkt,たまちえきまえ,,,田町駅前
@@ -291,6 +292,7 @@ stops,stop_name,ja-Hrkt,しおじばし,,,潮路橋
 stops,stop_name,ja-Hrkt,かいがんにちょうめ,,,海岸二丁目
 stops,stop_name,ja-Hrkt,ひのでさんばしいりぐち,,,日の出桟橋入口
 stops,stop_name,ja-Hrkt,たけしばさんばしいりぐち,,,竹芝桟橋入口
+stops,stop_name,ja-Hrkt,とらのもんびょういん,,,虎の門病院
 stops,stop_name,en,Tamachi Sta. East Gate,,,田町駅東口
 stops,stop_name,en,Moshiobashi,,,藻塩橋
 stops,stop_name,en,Tamachi Sta.,,,田町駅前
@@ -441,6 +443,7 @@ stops,stop_name,en,Shiojibashi,,,潮路橋
 stops,stop_name,en,Kaigan 2-chomei,,,海岸二丁目
 stops,stop_name,en,Hinodesambashi Ent.,,,日の出桟橋入口
 stops,stop_name,en,Takeshibasambashi Ent.,,,竹芝桟橋入口
+stops,stop_name,en,Toranomon Hospital,,,虎の門病院
 stops,stop_name,zh-Hans,田町车站东口,,,田町駅東口
 stops,stop_name,zh-Hans,藻盐桥,,,藻塩橋
 stops,stop_name,zh-Hans,田町车站前,,,田町駅前
@@ -591,6 +594,7 @@ stops,stop_name,zh-Hans,潮路桥,,,潮路橋
 stops,stop_name,zh-Hans,海岸二丁目,,,海岸二丁目
 stops,stop_name,zh-Hans,日出栈桥入口,,,日の出桟橋入口
 stops,stop_name,zh-Hans,竹芝栈桥入口,,,竹芝桟橋入口
+stops,stop_name,zh-Hans,虎之门医院,,,虎の門病院
 stops,stop_name,zh-TW,田町車站東口,,,田町駅東口
 stops,stop_name,zh-TW,藻鹽橋,,,藻塩橋
 stops,stop_name,zh-TW,田町車站前,,,田町駅前
@@ -741,6 +745,7 @@ stops,stop_name,zh-TW,潮路橋,,,潮路橋
 stops,stop_name,zh-TW,海岸二丁目,,,海岸二丁目
 stops,stop_name,zh-TW,日出棧橋入口,,,日の出桟橋入口
 stops,stop_name,zh-TW,竹芝棧橋入口,,,竹芝桟橋入口
+stops,stop_name,zh-TW,虎之門醫院,,,虎の門病院
 stops,stop_name,ko,타마치역 동쪽출구,,,田町駅東口
 stops,stop_name,ko,모시오바시,,,藻塩橋
 stops,stop_name,ko,타마치역 앞,,,田町駅前
@@ -891,6 +896,7 @@ stops,stop_name,ko,시오지바시,,,潮路橋
 stops,stop_name,ko,카이간 2쵸메,,,海岸二丁目
 stops,stop_name,ko,히노데 산바시 입구,,,日の出桟橋入口
 stops,stop_name,ko,타케시바 산바시 입구,,,竹芝桟橋入口
+stops,stop_name,ko,도라노몬 병원,,,虎の門病院
 trips,trip_headsign,ja,六本木ヒルズ行,,,六本木ヒルズ行
 trips,trip_headsign,ja,芝浦車庫行,,,芝浦車庫行
 trips,trip_headsign,ja,田町駅東口行,,,田町駅東口行
@@ -961,11 +967,11 @@ trips,trip_headsign,ko,아사쿠사선 미타 역앞 행,,,浅草線三田駅前
 trips,trip_headsign,ko,카이간 3쵸메 행,,,海岸三丁目行
 trips,trip_headsign,ko,타케시바 산바시 입구 행,,,竹芝桟橋入口行
 trips,trip_headsign,ko,부두공원 입구 행,,,埠頭公園入口行
-stop_times,stop_headsign,en,Akasaka Mitsuke,,,赤坂見附方面
-stop_times,stop_headsign,en,Roppongi Hills,,,六本木ヒルズ方面
 stop_times,stop_headsign,en,Roppongi Hills via Tamachi Sta. East Gate,,,田町駅東口経由六本木ヒルズ方面
+stop_times,stop_headsign,en,Roppongi Hills,,,六本木ヒルズ方面
 stop_times,stop_headsign,en,Shibaura Bus Depot via Tamachi Sta. East Gate,,,田町駅東口経由芝浦車庫
 stop_times,stop_headsign,en,Shibaura Bus Depot,,,芝浦車庫
+stop_times,stop_headsign,en,Akasaka Mitsuke,,,赤坂見附方面
 stop_times,stop_headsign,en,Tamachi Sta. East Gate,,,田町駅東口
 stop_times,stop_headsign,en,Akabanebashi Minami via Tamachi Sta. East Gate,,,田町駅東口経由赤羽橋南
 stop_times,stop_headsign,en,Akabanebashi Minami,,,赤羽橋南
