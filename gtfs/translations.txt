@@ -967,11 +967,11 @@ trips,trip_headsign,ko,아사쿠사선 미타 역앞 행,,,浅草線三田駅前
 trips,trip_headsign,ko,카이간 3쵸메 행,,,海岸三丁目行
 trips,trip_headsign,ko,타케시바 산바시 입구 행,,,竹芝桟橋入口行
 trips,trip_headsign,ko,부두공원 입구 행,,,埠頭公園入口行
-stop_times,stop_headsign,en,Roppongi Hills via Tamachi Sta. East Gate,,,田町駅東口経由六本木ヒルズ方面
+stop_times,stop_headsign,en,Akasaka Mitsuke,,,赤坂見附方面
 stop_times,stop_headsign,en,Roppongi Hills,,,六本木ヒルズ方面
+stop_times,stop_headsign,en,Roppongi Hills via Tamachi Sta. East Gate,,,田町駅東口経由六本木ヒルズ方面
 stop_times,stop_headsign,en,Shibaura Bus Depot via Tamachi Sta. East Gate,,,田町駅東口経由芝浦車庫
 stop_times,stop_headsign,en,Shibaura Bus Depot,,,芝浦車庫
-stop_times,stop_headsign,en,Akasaka Mitsuke,,,赤坂見附方面
 stop_times,stop_headsign,en,Tamachi Sta. East Gate,,,田町駅東口
 stop_times,stop_headsign,en,Akabanebashi Minami via Tamachi Sta. East Gate,,,田町駅東口経由赤羽橋南
 stop_times,stop_headsign,en,Akabanebashi Minami,,,赤羽橋南
