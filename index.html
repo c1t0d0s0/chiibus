@@ -2,8 +2,16 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>港区ちぃばす 停留所一覧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="港区コミュニティバス「ちぃばす」の路線図・停留所一覧・リアルタイム時刻表・発車カウントダウンマップ。">
+    <meta name="theme-color" content="#1e293b">
+    <title>港区ちぃばす マップ &amp; 時刻表</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Google tag (gtag.js) -->
     <script src="config.js"></script>
     <script>
@@ -19,36 +27,202 @@
             gtag('config', GTAG_ID);
         }
     </script>
+
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?202608171352">
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-header">港区ちぃばす 停留所一覧</div>
-            <div class="route-wrap">
-                <label for="route-select">ルート</label>
-                <select id="route-select" aria-label="ルート選択">
-                    <option value="">全停留所</option>
-                </select>
+    <div class="app-layout">
+        <!-- Sidebar for Desktop / Tablet -->
+        <aside class="sidebar" id="sidebar" aria-label="バス路線・停留所コントロール">
+            <header class="app-header">
+                <div class="brand-row">
+                    <div class="brand-logo">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="brand-info">
+                        <h1 class="brand-title">港区ちぃばす</h1>
+                        <span class="brand-subtitle" id="current-clock">時刻表・ルート案内</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Control Card (Route & Direction) -->
+            <div class="control-card">
+                <div class="control-group">
+                    <label for="route-select" class="control-label">
+                        <span>運行ルート</span>
+                        <span class="route-badge-indicator" id="route-indicator"></span>
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="route-select" class="custom-select" aria-label="運行ルート選択">
+                            <option value="">全ルート（すべての停留所）</option>
+                        </select>
+                        <span class="select-chevron">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="control-group" id="direction-group">
+                    <label for="direction-select" class="control-label">進行方向</label>
+                    <div class="select-wrapper">
+                        <select id="direction-select" class="custom-select" aria-label="進行方向選択" disabled>
+                            <option value="">-- ルートを選択してください --</option>
+                        </select>
+                        <span class="select-chevron">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="route-wrap direction-wrap">
-                <label for="direction-select">方向</label>
-                <select id="direction-select" aria-label="方向選択" disabled>
-                    <option value="">-- ルートを選択 --</option>
-                </select>
+
+            <!-- Search Box -->
+            <div class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" id="search-input" class="search-input" placeholder="停留所名・ふりがな・ローマ字で検索…" aria-label="停留所検索">
+                    <button type="button" id="search-clear" class="search-clear-btn" aria-label="検索クリア" hidden>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="list-meta-bar">
+                    <span class="stop-count" id="stop-count-label">読み込み中…</span>
+                    <button type="button" id="fit-bounds-btn" class="text-btn" title="全停留所を画面に収める">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                        <span>全体表示</span>
+                    </button>
+                </div>
             </div>
-            <div class="search-wrap">
-                <input type="text" id="search" placeholder="停留所名で検索…" aria-label="検索">
-            </div>
-            <div id="stop-list" class="stop-list">
-                <div class="loading">読み込み中…</div>
+
+            <!-- Stop List Container -->
+            <div id="stop-list" class="stop-list" role="region" aria-label="停留所一覧">
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>GTFSデータを読み込んでいます…</p>
+                </div>
             </div>
         </aside>
-        <div id="map"></div>
+
+        <!-- Map Main Section -->
+        <main class="map-container" id="map-container">
+            <div id="map" class="leaflet-map" aria-label="ちぃばす路線図マップ"></div>
+
+            <!-- Map Floating Action Buttons -->
+            <div class="map-fab-group">
+                <button type="button" id="geo-locate-btn" class="map-fab" title="現在地を表示" aria-label="現在地を表示">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                    </svg>
+                </button>
+                <button type="button" id="map-reset-btn" class="map-fab" title="港区中心に戻る" aria-label="港区全体を表示">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Floating Active Route Pill (Top-Center on Map) -->
+            <div id="active-route-pill" class="active-route-pill" hidden>
+                <span class="active-route-dot" id="active-route-dot"></span>
+                <span class="active-route-text" id="active-route-text"></span>
+                <span class="active-route-dir" id="active-route-dir"></span>
+            </div>
+        </main>
+
+        <!-- Slide-Over / Modal Detail Panel for Stop Info & Timetable -->
+        <div id="stop-detail-panel" class="detail-panel" aria-hidden="true">
+            <div class="detail-backdrop" id="detail-backdrop"></div>
+            <div class="detail-content">
+                <header class="detail-header">
+                    <div class="detail-header-main">
+                        <span class="detail-kana" id="detail-stop-kana"></span>
+                        <h2 class="detail-title" id="detail-stop-name">停留所名</h2>
+                        <div class="detail-routes-tags" id="detail-routes-tags"></div>
+                    </div>
+                    <button type="button" id="detail-close-btn" class="detail-close-btn" aria-label="詳細を閉じる">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </header>
+
+                <div class="detail-body">
+                    <!-- Next Bus Live Countdown Card -->
+                    <div class="next-bus-card" id="next-bus-card">
+                        <div class="next-bus-header">
+                            <span class="next-bus-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>次の発車便</span>
+                            </span>
+                            <span class="next-bus-clock" id="next-bus-clock">--:--</span>
+                        </div>
+                        <div class="next-bus-list" id="next-bus-list">
+                            <div class="next-bus-empty">運行情報を取得中…</div>
+                        </div>
+                    </div>
+
+                    <!-- Timetable Section -->
+                    <div class="timetable-section">
+                        <div class="timetable-controls">
+                            <h3 class="timetable-heading">時刻表</h3>
+                            <div class="day-tabs" role="tablist" id="day-tabs">
+                                <button type="button" class="day-tab active" data-day="today" role="tab" aria-selected="true">今日</button>
+                                <button type="button" class="day-tab" data-day="weekday" role="tab" aria-selected="false">平日</button>
+                                <button type="button" class="day-tab" data-day="saturday" role="tab" aria-selected="false">土曜</button>
+                                <button type="button" class="day-tab" data-day="holiday" role="tab" aria-selected="false">休日</button>
+                            </div>
+                        </div>
+
+                        <div class="timetable-filter-info" id="timetable-filter-info"></div>
+
+                        <div class="timetable-matrix" id="timetable-matrix">
+                            <div class="loading-state-small">時刻表を読み込み中…</div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="detail-footer">
+                    <button type="button" id="detail-focus-btn" class="primary-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+                        <span>地図でズーム表示</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Mobile Bottom Sheet Container (Visible on Mobile <= 768px) -->
+        <div id="mobile-sheet" class="mobile-sheet collapsed" aria-label="モバイルコントロール">
+            <div class="sheet-handle-bar" id="sheet-handle-bar">
+                <div class="sheet-handle"></div>
+            </div>
+
+            <div class="sheet-header" id="sheet-header">
+                <div class="sheet-summary">
+                    <span class="sheet-route-dot" id="sheet-route-dot"></span>
+                    <div class="sheet-title-col">
+                        <span class="sheet-title" id="sheet-title">港区ちぃばす 停留所一覧</span>
+                        <span class="sheet-subtitle" id="sheet-subtitle">タップまたは上にスワイプ</span>
+                    </div>
+                    <span class="sheet-count-badge" id="sheet-count-badge">--</span>
+                </div>
+            </div>
+
+            <div class="sheet-content" id="sheet-content">
+                <!-- Mobile controls content will be injected or synchronized with desktop sidebar -->
+            </div>
+        </div>
     </div>
 
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="script.js"></script>
+    <script src="script.js?202608171352"></script>
 </body>
 </html>
